@@ -1,0 +1,3 @@
+# MiniProgramForVilliagerLoanManagementSystem
+基于uni-app村民贷小程序开发代码暂存仓库
+# 重要: js_sdk内包含echarts组件的使用方法
