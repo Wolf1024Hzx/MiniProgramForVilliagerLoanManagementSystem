@@ -207,6 +207,7 @@
 
 .cuIcon-back:before {
 	content: "\e679";
+	color: aliceblue;
 }
 
 .cuIcon-cascades:before {
