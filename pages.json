@@ -17,23 +17,57 @@
 			"style": {
 				"enablePullDownRefresh": false
 			}
-		}, 
+		},
 		{
 			"path": "pages/overview/overview_2/overview_2",
 			"style": {
 				"enablePullDownRefresh": false
 			}
+		}, {
+			"path": "pages/rank/rank_detail/rank_detail",
+			"style": {
+				"navigationBarTitleText": "",
+				"enablePullDownRefresh": false
+			}
+
+		},
+		{
+			"path": "pages/SubbranchWorker/index",
+			"style": {
+				"navigationBarTitleText": "村民贷系统"
+			}
+		},
+		{
+			"path": "pages/MyAccount/index",
+			"style": {
+				"navigationBarTitleText": "村民贷系统"
+			}
+		},
+		{
+			"path": "pages/MyAccount/BusinessDetail/index",
+			"style": {
+				"navigationBarTitleText": "村民贷系统"
+			}
+		},
+		{
+			"path": "pages/MyAccount/PerformanceDetail/index",
+			"style": {
+				"navigationBarTitleText": "村民贷系统"
+			}
+		},
+		{
+			"path": "pages/MyAccount/OverdateDetail/index",
+			"style": {
+				"navigationBarTitleText": "村民贷系统"
+			}
+		},
+		{
+			"path": "pages/FinancialAssistant/index",
+			"style": {
+				"navigationBarTitleText": "村民贷系统"
+			}
 		}
-	    ,{
-            "path" : "pages/rank/rank_detail/rank_detail",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "uni-app",

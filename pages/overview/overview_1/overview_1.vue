@@ -50,55 +50,63 @@
 				</view>
 			</view>
 
-			<view style="font-size: 32rpx; font-weight: 700; color: #2d2f31;
-				font-family: Source Han Sans CN, Source Han Sans CN-Bold; margin: 40rpx 0 0 40rpx">村民贷概况</view>
-
-			<view class="overview-1">
-				<view style="flex: 1;">
-					<view class="text-1">300万</view>
-					<view class="text-2">贷款余额(元)</view>
+			<!-- 未点确定时的总体内容 -->
+			<view :style="{display: selected ? 'none' : ''}">
+				<view style="font-size: 32rpx; font-weight: 700; color: #2d2f31;
+					font-family: Source Han Sans CN, Source Han Sans CN-Bold; margin: 40rpx 0 0 40rpx">村民贷概况</view>
+				
+				<view class="overview-1">
+					<view style="flex: 1;">
+						<view class="text-1">300万</view>
+						<view class="text-2">贷款余额(元)</view>
+					</view>
+					<view style="flex: 1;border-left:solid 1rpx #f5f6ff;border-right:solid 1rpx #f5f6ff;">
+						<view class="text-1">3000</view>
+						<view class="text-2">户数</view>
+					</view>
+					<view style="flex: 1;">
+						<view class="text-1">20万</view>
+						<view class="text-2">利息收入</view>
+					</view>
 				</view>
-				<view style="flex: 1;border-left:solid 1rpx #f5f6ff;border-right:solid 1rpx #f5f6ff;">
-					<view class="text-1">3000</view>
-					<view class="text-2">户数</view>
+				<view class="overview-2">
+					<view style="flex: 1;border-right: 1rpx solid #f5f6ff;">
+						<view class="text-1">59万</view>
+						<view class="text-2">户均贷款(元)</view>
+					</view>
+					<view style="flex: 1;">
+						<view class="text-1">3.16</view>
+						<view class="text-2">平均利率(%)</view>
+					</view>
 				</view>
-				<view style="flex: 1;">
-					<view class="text-1">20万</view>
-					<view class="text-2">利息收入</view>
+				<view class="overview-3">
+					<text style="vertical-align: middle;font-size: 28rpx;font-weight: 400;
+						font-family: Source Han Sans CN, Source Han Sans CN-Regular;">APRU值：</text>
+					<text style="vertical-align: middle;font-size: 38rpx;font-weight: 700;
+						font-family: Source Han Sans CN, Source Han Sans CN-Bold;">10000</text>
 				</view>
+				<view class="overview-4">
+					<view style="flex: 1;">
+						<view class="text-1">10万</view>
+						<view class="text-2">逾期贷款余额(元)</view>
+					</view>
+					<view style="flex: 1;border-left:solid 1rpx #f5f6ff;border-right:solid 1rpx #f5f6ff;">
+						<view class="text-1">300万</view>
+						<view class="text-2">欠息和总计</view>
+					</view>
+					<view style="flex: 1;display: flex;align-items: center;justify-content: center;" @tap="tapButton">
+						<text style="font-size: 30rpx;font-weight: 700;
+							font-family: Source Han Sans CN, Source Han Sans CN-Bold;">查看更多</text>
+						<image src="../../../static/overview/overview_1/double_arrow.png"
+							style="width: 22rpx;height: 28rpx; position: relative; top: 3rpx; margin-left: 8rpx"></image>
+					</view>
+				</view>F
 			</view>
-			<view class="overview-2">
-				<view style="flex: 1;border-right: 1rpx solid #f5f6ff;">
-					<view class="text-1">59万</view>
-					<view class="text-2">户均贷款(元)</view>
-				</view>
-				<view style="flex: 1;">
-					<view class="text-1">3.16</view>
-					<view class="text-2">平均利率(%)</view>
-				</view>
+			
+			<view :style="{display: selected ? '' : 'none'}" style="width: 670rpx;margin: 36rpx auto; height: 100rpx;background-color: #2d2f31;">
+				
 			</view>
-			<view class="overview-3">
-				<text style="vertical-align: middle;font-size: 28rpx;font-weight: 400;
-					font-family: Source Han Sans CN, Source Han Sans CN-Regular;">APRU值：</text>
-				<text style="vertical-align: middle;font-size: 38rpx;font-weight: 700;
-					font-family: Source Han Sans CN, Source Han Sans CN-Bold;">10000</text>
-			</view>
-			<view class="overview-4">
-				<view style="flex: 1;">
-					<view class="text-1">10万</view>
-					<view class="text-2">逾期贷款余额(元)</view>
-				</view>
-				<view style="flex: 1;border-left:solid 1rpx #f5f6ff;border-right:solid 1rpx #f5f6ff;">
-					<view class="text-1">300万</view>
-					<view class="text-2">欠息和总计</view>
-				</view>
-				<view style="flex: 1;display: flex;align-items: center;justify-content: center;" @tap="tapButton">
-					<text style="font-size: 30rpx;font-weight: 700;
-						font-family: Source Han Sans CN, Source Han Sans CN-Bold;">查看更多</text>
-					<image src="../../../static/overview/overview_1/double_arrow.png"
-						style="width: 22rpx;height: 28rpx; position: relative; top: 3rpx; margin-left: 8rpx"></image>
-				</view>
-			</view>
+			
 			<view style="display: none;">{{getStrFromStore()}}</view>
 		</view>
 	</view>
@@ -112,6 +120,7 @@
 				subbranchIndex: 0,
 				interval: ['每年', '每季度', '每月', '每周'],
 				intervalIndex: 0,
+				selected: true
 			}
 		},
 		methods: {
