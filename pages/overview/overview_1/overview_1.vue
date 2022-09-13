@@ -54,7 +54,7 @@
 			<view :style="{display: selected ? 'none' : ''}">
 				<view style="font-size: 32rpx; font-weight: 700; color: #2d2f31;
 					font-family: Source Han Sans CN, Source Han Sans CN-Bold; margin: 40rpx 0 0 40rpx">村民贷概况</view>
-				
+
 				<view class="overview-1">
 					<view style="flex: 1;">
 						<view class="text-1">300万</view>
@@ -98,21 +98,24 @@
 						<text style="font-size: 30rpx;font-weight: 700;
 							font-family: Source Han Sans CN, Source Han Sans CN-Bold;">查看更多</text>
 						<image src="../../../static/overview/overview_1/double_arrow.png"
-							style="width: 22rpx;height: 28rpx; position: relative; top: 3rpx; margin-left: 8rpx"></image>
+							style="width: 22rpx;height: 28rpx; position: relative; top: 3rpx; margin-left: 8rpx">
+						</image>
 					</view>
 				</view>F
 			</view>
-			
-			<view :style="{display: selected ? '' : 'none'}" style="width: 670rpx;margin: 36rpx auto; height: 100rpx;background-color: #2d2f31;">
-				
+
+			<view :style="{display: selected ? '' : 'none'}" style="width: 670rpx;margin: 36rpx auto;">
+				<uni-ec-canvas class="uni-ec-canvas" id="line-chart" :ec="ec" canvas-id="multi-charts-line">
+				</uni-ec-canvas>
 			</view>
-			
+
 			<view style="display: none;">{{getStrFromStore()}}</view>
 		</view>
 	</view>
 </template>
 
 <script>
+	import uniEcCanvas from "@/components/uni-ec-canvas/uni-ec-canvas";
 	export default {
 		data() {
 			return {
@@ -120,7 +123,44 @@
 				subbranchIndex: 0,
 				interval: ['每年', '每季度', '每月', '每周'],
 				intervalIndex: 0,
-				selected: true
+				selected: true,
+				ec: {
+					option: {
+						tooltip: {
+							trigger: 'axis'
+						},
+						legend: {
+							data: ['平均利率', '户均贷款余额']
+						},
+						grid: {
+							left: '3%',
+							right: '4%',
+							bottom: '3%',
+							containLabel: true
+						},
+						xAxis: {
+							type: 'category',
+							boundaryGap: false,
+							data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月']
+						},
+						yAxis: {
+							type: 'value'
+						},
+						series: [{
+								name: '平均利率',
+								type: 'line',
+								stack: 'Total',
+								data: [120, 132, 101, 134, 90, 230, 210]
+							},
+							{
+								name: '户均贷款余额',
+								type: 'line',
+								stack: 'Total',
+								data: [220, 182, 191, 234, 290, 330, 310]
+							},
+						]
+					}
+				},
 			}
 		},
 		methods: {
@@ -160,6 +200,9 @@
 					console.log(res);
 				}
 			})
+		},
+		components: {
+			uniEcCanvas
 		}
 	}
 </script>
@@ -169,6 +212,13 @@
 		display: inline-block;
 		width: 320rpx;
 		margin-left: 18rpx;
+	}
+
+	.uni-ec-canvas {
+		width: 640rpx;
+		height: 600rpx;
+		display: block;
+		margin: 0 auto;
 	}
 
 	.bg {
