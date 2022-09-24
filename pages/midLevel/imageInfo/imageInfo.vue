@@ -1,26 +1,9 @@
 <template>
 	<view>
-		<!-- <cu-custom :is-back="false" :background-height="300">
-		  <block slot="content">村民贷系统</block>
-		</cu-custom> -->
-		<!-- <view style="display: flex;margin-top: 60rpx;margin-bottom: 20rpx;">
-		  <view class="btn" data-btn="left" @tap="tapBtn">
-		    证件查询
-		    <view v-if="chooseLeftBtn" class="line_under_btn" />
-		  </view>
-		  <view class="btn" data-btn="right" @tap="tapBtn">
-		    客户名称查询
-		    <view v-if="!chooseLeftBtn" class="line_under_btn" />
-		  </view>
-		</view> -->
 		<CustomerInformation>
-			<CustomerInformationSearch ></CustomerInformationSearch>
+			<text slot="BusinessInformation"></text>
 		</CustomerInformation>
 		<view class="main">
-			<!-- <view class="search">
-				<input style="width: 100%;" type="idcard" placeholder="请输入您的证件号码">
-				<img class="search-icon" src="@/static/midLevel/search.png">
-			</view> -->
 			<view class="navigate">
 				<view class="classify">
 					<view @click="bindClassify(0)" :class="classifyStatus === 0 ? 'classify-chose-active' : 'classify-chose'">管理类</view>
@@ -33,34 +16,12 @@
 			</view>
 			<view class="image-info">
 				<view class="tip">选择下方所需图片</view>
-				<view class="card" @click="bindImage(0)">
-					<view class="card-name">身份证</view>
-					<view class="card-body" :class="imageStatus === 0 ? 'active-border' : ''">
-						<img class="card-img" :src="imageURL[0]">
-						<view v-if="imageStatus === 0">
-							<view class="left-top">身份证</view>
-							<view class="right-bottom"></view>
-							<img class="ok-icon" src="@/static/midLevel/imageInfo/hk_right.png">
-						</view>
-					</view>
-				</view>
-				<view class="card" @click="bindImage(1)">
-					<view class="card-name">户口本</view>
-					<view class="card-body" :class="imageStatus === 1 ? 'active-border' : ''">
-						<img class="card-img" :src="imageURL[1]">
-						<view v-if="imageStatus === 1">
-							<view class="left-top">户口本</view>
-							<view class="right-bottom"></view>
-							<img class="ok-icon" src="@/static/midLevel/imageInfo/hk_right.png">
-						</view>
-					</view>
-				</view>
-				<view class="card" @click="bindImage(2)">
-					<view class="card-name">结婚证</view>
-					<view class="card-body" :class="imageStatus === 2 ? 'active-border' : ''">
-						<img class="card-img" :src="imageURL[2]"></img>
-						<view v-if="imageStatus === 2">
-							<view class="left-top">结婚证</view>
+				<view v-for="(item, index) in images" class="card" @click="bindImage(index)">
+					<view class="card-name">{{item.name}}</view>
+					<view class="card-body" :class="imageStatus === index ? 'active-border' : ''">
+						<img class="card-img" :src="item.url">
+						<view v-if="imageStatus === index">
+							<view class="left-top">{{item.name}}</view>
 							<view class="right-bottom"></view>
 							<img class="ok-icon" src="@/static/midLevel/imageInfo/hk_right.png">
 						</view>
@@ -68,12 +29,8 @@
 				</view>
 			</view>
 			<view class="hail">
-				<view class="btn-left">
-					
-				</view>
-				<view class="btn-right">
-					
-				</view>
+				<view class="btn-left">下载所有图片</view>
+				<view class="btn-right">下载已勾选</view>
 			</view>
 		</view>
 	</view>
@@ -81,23 +38,28 @@
 
 <script>
 import CustomerInformation from '../CustomerInformation/CustomerInformation.vue'
-import CustomerInformationSearch from '../CustomerInformation/CustomerInformationSearch/CustomerInformationSearch.vue'
 export default {
 	data() {
 		return {
-			// chooseLeftBtn: true,
 			classifyStatus: 0,
 			serviceStatus: 0,
 			imageStatus: -1,
-			imageURL: ["",
-			"",
-			"https://i1.hdslb.com/bfs/face/aaf33dced1941af0946f37c62f4b48fcaba9c9a2.jpg@92w_92h.webp"]
+			images: [{
+				name: "身份证",
+				url: ""
+			},
+			{
+				name: "户口本",
+				url: ""
+			},
+			{
+				name: "结婚证",
+				url: "https://i1.hdslb.com/bfs/face/aaf33dced1941af0946f37c62f4b48fcaba9c9a2.jpg@92w_92h.webp"
+			},
+			]
 		}
 	},
 	methods: {
-		// tapBtn: function(args) {
-		//   this.chooseLeftBtn = args.currentTarget.dataset.btn === 'left'
-		// },
 		bindClassify(status) {
 			this.classifyStatus = status
 		},
@@ -109,66 +71,41 @@ export default {
 		}
 	},
 	components: {
-		CustomerInformation,
-		CustomerInformationSearch
+		CustomerInformation
 	}
 }
 </script>
 
 <style scoped>
 .hail {
-	margin: 60rpx 32rpx 96rpx;
+	margin: 60rpx 32rpx;
+	padding-bottom: 96rpx;
 	display: flex;
 	justify-content: space-between;
 }
 .btn-left {
 	width: 335rpx;
 	height: 70rpx;
-	opacity: 0.15;
-	background: #4e8bff;
+	background: #D4E0F9;
 	border-radius: 35rpx;
+	color: #4e8bff;
+	border: 2rpx solid #4e8bff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 .btn-right {
 	width: 335rpx;
 	height: 70rpx;
 	background: #4e8bff;
 	border-radius: 35rpx;
-}
-/* .btn {
-	position: relative;
-	flex: 1;
-	text-align: center;
-	color: #FFFFFF;
-	font-size: 30rpx;
-	font-family: Source Han Sans CN, Source Han Sans CN-Bold;
-	font-weight: 400;
-}
-.line_under_btn {
-	position: absolute;
-	width: 345rpx;
-	height: 6rpx;
-	border-radius: 3rpx;
-	background-color: #FFFFFF;
-	bottom: -18rpx;
-	left: 15rpx
-} */
-/* .search {
-	width: 100%;
-	height: 96rpx;
+	color: #fff;
 	display: flex;
+	justify-content: center;
 	align-items: center;
-	justify-content: space-between;
-	padding: 0 32rpx;
-	background-color: #fff;
-	margin-bottom: 30rpx;
 }
-.search-icon {
-	height: 37rpx;
-	width: 36rpx;
-}	 */
 .main {
 	font-family: Source Han Sans CN;
-	padding-top: 24rpx;
 }
 .navigate {
 	width: 100%;
