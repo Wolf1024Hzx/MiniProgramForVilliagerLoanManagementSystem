@@ -69,5 +69,7 @@
 </script>
 
 <style>
-
+.main-color {
+	background: linear-gradient(0deg, #4e8bff 5%, #52b0ff 94%);
+}
 </style>

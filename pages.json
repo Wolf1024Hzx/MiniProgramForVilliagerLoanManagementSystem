@@ -66,8 +66,14 @@
 			"style": {
 				"navigationBarTitleText": "村民贷系统"
 			}
-		}
-        ,{
+		},
+		{
+			"path": "pages/midLevel/index",
+			"style": {
+				"enablePullDownRefresh": false
+			}
+		},
+		{
             "path" : "pages/AlertQuery/AlertQueryPop_r/AlertQueryPop_r",
             "style" :                                                                                    
             {
@@ -127,7 +133,7 @@
 		"list": [
 			{
 				"name": "中层", //模式名称
-				"path": "pages/subbranch/MyAccount/index", //启动页面，必选
+				"path": "pages/midLevel/index", //启动页面，必选
 				"query": "" //启动参数，在页面的onLoad函数里面得到
 			}
 		]
