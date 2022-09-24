@@ -1,8 +1,18 @@
 <template>
 	<view>
-		<cu-custom :is-back="false">
+		<cu-custom :is-back="false" :background-height="300">
 		  <block slot="content">村民贷系统</block>
 		</cu-custom>
+		<view style="display: flex;margin-top: 60rpx;margin-bottom: 20rpx;">
+		  <view class="btn" data-btn="left" @tap="tapBtn">
+		    证件查询
+		    <view v-if="chooseLeftBtn" class="line_under_btn" />
+		  </view>
+		  <view class="btn" data-btn="right" @tap="tapBtn">
+		    客户名称查询
+		    <view v-if="!chooseLeftBtn" class="line_under_btn" />
+		  </view>
+		</view>
 		<view class="main">
 			<view class="search">
 				<input style="width: 100%;" type="idcard" placeholder="请输入您的证件号码">
@@ -54,6 +64,14 @@
 					</view>
 				</view>
 			</view>
+			<view class="hail">
+				<view class="btn-left">
+					
+				</view>
+				<view class="btn-right">
+					
+				</view>
+			</view>
 		</view>
 	</view>
 </template>
@@ -62,15 +80,19 @@
 export default {
 	data() {
 		return {
+			chooseLeftBtn: true,
 			classifyStatus: 0,
 			serviceStatus: 0,
 			imageStatus: -1,
-			imageURL: ["https://i1.hdslb.com/bfs/face/aaf33dced1941af0946f37c62f4b48fcaba9c9a2.jpg@92w_92h.webp",
-			"https://i1.hdslb.com/bfs/face/aaf33dced1941af0946f37c62f4b48fcaba9c9a2.jpg@92w_92h.webp",
+			imageURL: ["",
+			"",
 			"https://i1.hdslb.com/bfs/face/aaf33dced1941af0946f37c62f4b48fcaba9c9a2.jpg@92w_92h.webp"]
 		}
 	},
 	methods: {
+		tapBtn: function(args) {
+		  this.chooseLeftBtn = args.currentTarget.dataset.btn === 'left'
+		},
 		bindClassify(status) {
 			this.classifyStatus = status
 		},
@@ -85,6 +107,42 @@ export default {
 </script>
 
 <style scoped>
+.hail {
+	margin: 60rpx 32rpx 96rpx;
+	display: flex;
+	justify-content: space-between;
+}
+.btn-left {
+	width: 335rpx;
+	height: 70rpx;
+	opacity: 0.15;
+	background: #4e8bff;
+	border-radius: 35rpx;
+}
+.btn-right {
+	width: 335rpx;
+	height: 70rpx;
+	background: #4e8bff;
+	border-radius: 35rpx;
+}
+.btn {
+	position: relative;
+	flex: 1;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 30rpx;
+	font-family: Source Han Sans CN, Source Han Sans CN-Bold;
+	font-weight: 400;
+}
+.line_under_btn {
+	position: absolute;
+	width: 345rpx;
+	height: 6rpx;
+	border-radius: 3rpx;
+	background-color: #FFFFFF;
+	bottom: -18rpx;
+	left: 15rpx
+}
 .search {
 	width: 100%;
 	height: 96rpx;
@@ -179,6 +237,7 @@ export default {
 	width: 595rpx;
 	height: 299rpx;
 	background: #eaeaea;
+	border: 4rpx solid #ffffff;
 	border-radius: 15rpx;
 	position: relative;
 }
