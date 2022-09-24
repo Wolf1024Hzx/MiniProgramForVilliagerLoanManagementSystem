@@ -98,8 +98,22 @@
                 "navigationBarTitleText": "",
                 "enablePullDownRefresh": false
             }
-            
+        },{
+            "path" : "pages/midLevel/innerIndex/innerIndex",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+        },{
+            "path" : "pages/midLevel/imageInfo/imageInfo",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
         }
+		
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
