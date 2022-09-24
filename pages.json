@@ -85,6 +85,15 @@
 		    }
 		    
 		}
+        ,{
+            "path" : "pages/midLevel/CustomerInformation/CustomerInformation",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",

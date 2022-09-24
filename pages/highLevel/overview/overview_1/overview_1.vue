@@ -221,20 +221,20 @@ export default {
     }
   },
   onLoad() {
-    uni.request({
-      url: 'http://120.24.235.36:8089/finance-analysis/overview/startAndEndTime',
-      method: 'POST',
-      data: {
-        'subbranch': '全行', // 支行名称 “xx支行”/“全行”
-        'start': '2021-01-17', // 开始时间 yyyy-mm-dd
-        'end': '2025-01-17', // 结束时间 yyyy-mm-dd
-        'interval': '', // 时间间隔 可传入：“按年”“按月”“按天”；不填默认是“按月”
-        'manager': '' // 客户经理（可不填）
-      },
-      success: (res) => {
-        console.log(res)
-      }
-    })
+    // uni.request({
+    //   url: 'http://120.24.235.36:8089/finance-analysis/overview/startAndEndTime',
+    //   method: 'POST',
+    //   data: {
+    //     'subbranch': '全行', // 支行名称 “xx支行”/“全行”
+    //     'start': '2021-01-17', // 开始时间 yyyy-mm-dd
+    //     'end': '2025-01-17', // 结束时间 yyyy-mm-dd
+    //     'interval': '', // 时间间隔 可传入：“按年”“按月”“按天”；不填默认是“按月”
+    //     'manager': '' // 客户经理（可不填）
+    //   },
+    //   success: (res) => {
+    //     console.log(res)
+    //   }
+    // })
   }
 }
 </script>
