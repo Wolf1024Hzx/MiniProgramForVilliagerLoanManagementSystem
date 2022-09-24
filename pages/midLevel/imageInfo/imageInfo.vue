@@ -1,86 +1,86 @@
 <template>
-	<view>
-		<cu-custom :is-back="false">
-		  <block slot="content">村民贷系统</block>
-		</cu-custom>
-		<view class="main">
-			<view class="search">
-				<input style="width: 100%;" type="idcard" placeholder="请输入您的证件号码">
-				<img class="search-icon" src="@/static/midLevel/search.png">
-			</view>
-			<view class="navigate">
-				<view class="classify">
-					<view @click="bindClassify(0)" :class="classifyStatus === 0 ? 'classify-chose-active' : 'classify-chose'">管理类</view>
-					<view @click="bindClassify(1)" :class="classifyStatus === 1 ? 'classify-chose-active' : 'classify-chose'">要件类</view>
-				</view>
-				<view class="service">
-					<view @click="bindService(0)" :class="serviceStatus === 0 ? 'service-chose-active' : 'service-chose'">未结清业务</view>
-					<view @click="bindService(1)" :class="serviceStatus === 1 ? 'service-chose-active' : 'service-chose'">已结清业务</view>
-				</view>
-			</view>
-			<view class="image-info">
-				<view class="tip">选择下方所需图片</view>
-				<view class="card" @click="bindImage(0)">
-					<view class="card-name">身份证</view>
-					<view class="card-body" :class="imageStatus === 0 ? 'active-border' : ''">
-						<img class="card-img" :src="imageURL[0]">
-						<view v-if="imageStatus === 0">
-							<view class="left-top">身份证</view>
-							<view class="right-bottom"></view>
-							<img class="ok-icon" src="@/static/midLevel/imageInfo/hk_right.png">
-						</view>
-					</view>
-				</view>
-				<view class="card" @click="bindImage(1)">
-					<view class="card-name">户口本</view>
-					<view class="card-body" :class="imageStatus === 1 ? 'active-border' : ''">
-						<img class="card-img" :src="imageURL[1]">
-						<view v-if="imageStatus === 1">
-							<view class="left-top">户口本</view>
-							<view class="right-bottom"></view>
-							<img class="ok-icon" src="@/static/midLevel/imageInfo/hk_right.png">
-						</view>
-					</view>
-				</view>
-				<view class="card" @click="bindImage(2)">
-					<view class="card-name">结婚证</view>
-					<view class="card-body" :class="imageStatus === 2 ? 'active-border' : ''">
-						<img class="card-img" :src="imageURL[2]"></img>
-						<view v-if="imageStatus === 2">
-							<view class="left-top">结婚证</view>
-							<view class="right-bottom"></view>
-							<img class="ok-icon" src="@/static/midLevel/imageInfo/hk_right.png">
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
-	</view>
+  <view>
+    <cu-custom :is-back="false">
+      <block slot="content">村民贷系统</block>
+    </cu-custom>
+    <view class="main">
+      <view class="search">
+        <input style="width: 100%;" type="idcard" placeholder="请输入您的证件号码">
+        <img class="search-icon" src="@/static/midLevel/search.png">
+      </view>
+      <view class="navigate">
+        <view class="classify">
+          <view :class="classifyStatus === 0 ? 'classify-chose-active' : 'classify-chose'" @click="bindClassify(0)">管理类</view>
+          <view :class="classifyStatus === 1 ? 'classify-chose-active' : 'classify-chose'" @click="bindClassify(1)">要件类</view>
+        </view>
+        <view class="service">
+          <view :class="serviceStatus === 0 ? 'service-chose-active' : 'service-chose'" @click="bindService(0)">未结清业务</view>
+          <view :class="serviceStatus === 1 ? 'service-chose-active' : 'service-chose'" @click="bindService(1)">已结清业务</view>
+        </view>
+      </view>
+      <view class="image-info">
+        <view class="tip">选择下方所需图片</view>
+        <view class="card" @click="bindImage(0)">
+          <view class="card-name">身份证</view>
+          <view class="card-body" :class="imageStatus === 0 ? 'active-border' : ''">
+            <img class="card-img" :src="imageURL[0]">
+            <view v-if="imageStatus === 0">
+              <view class="left-top">身份证</view>
+              <view class="right-bottom" />
+              <img class="ok-icon" src="@/static/midLevel/imageInfo/hk_right.png">
+            </view>
+          </view>
+        </view>
+        <view class="card" @click="bindImage(1)">
+          <view class="card-name">户口本</view>
+          <view class="card-body" :class="imageStatus === 1 ? 'active-border' : ''">
+            <img class="card-img" :src="imageURL[1]">
+            <view v-if="imageStatus === 1">
+              <view class="left-top">户口本</view>
+              <view class="right-bottom" />
+              <img class="ok-icon" src="@/static/midLevel/imageInfo/hk_right.png">
+            </view>
+          </view>
+        </view>
+        <view class="card" @click="bindImage(2)">
+          <view class="card-name">结婚证</view>
+          <view class="card-body" :class="imageStatus === 2 ? 'active-border' : ''">
+            <img class="card-img" :src="imageURL[2]"></img>
+            <view v-if="imageStatus === 2">
+              <view class="left-top">结婚证</view>
+              <view class="right-bottom" />
+              <img class="ok-icon" src="@/static/midLevel/imageInfo/hk_right.png">
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
 </template>
 
 <script>
 export default {
-	data() {
-		return {
-			classifyStatus: 0,
-			serviceStatus: 0,
-			imageStatus: -1,
-			imageURL: ["https://i1.hdslb.com/bfs/face/aaf33dced1941af0946f37c62f4b48fcaba9c9a2.jpg@92w_92h.webp",
-			"https://i1.hdslb.com/bfs/face/aaf33dced1941af0946f37c62f4b48fcaba9c9a2.jpg@92w_92h.webp",
-			"https://i1.hdslb.com/bfs/face/aaf33dced1941af0946f37c62f4b48fcaba9c9a2.jpg@92w_92h.webp"]
-		}
-	},
-	methods: {
-		bindClassify(status) {
-			this.classifyStatus = status
-		},
-		bindService(status) {
-			this.serviceStatus = status
-		},
-		bindImage(status) {
-			this.imageStatus = status
-		}
-	}
+  data() {
+    return {
+      classifyStatus: 0,
+      serviceStatus: 0,
+      imageStatus: -1,
+      imageURL: ['https://i1.hdslb.com/bfs/face/aaf33dced1941af0946f37c62f4b48fcaba9c9a2.jpg@92w_92h.webp',
+        'https://i1.hdslb.com/bfs/face/aaf33dced1941af0946f37c62f4b48fcaba9c9a2.jpg@92w_92h.webp',
+        'https://i1.hdslb.com/bfs/face/aaf33dced1941af0946f37c62f4b48fcaba9c9a2.jpg@92w_92h.webp']
+    }
+  },
+  methods: {
+    bindClassify(status) {
+      this.classifyStatus = status
+    },
+    bindService(status) {
+      this.serviceStatus = status
+    },
+    bindImage(status) {
+      this.imageStatus = status
+    }
+  }
 }
 </script>
 

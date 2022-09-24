@@ -1,43 +1,43 @@
 <template>
-	<view>
-		<cu-custom :is-back="false">
-		  <block slot="content">村民贷系统</block>
-		</cu-custom>
-		<view class="main">
-			<view class="card">
-				<img class="img" src="@/static/midLevel/innerIndex/icon1.png">
-				<view class="mid">
-					<view class="ch-Zn">客户信息</view>
-					<view class="en">Customer Information</view>
-				</view>
-				<view class="arrow"></view>
-			</view>
-			<view class="card">
-				<img class="img" src="@/static/midLevel/innerIndex/icon2.png">
-				<view class="mid">
-					<view class="ch-Zn">影像信息</view>
-					<view class="en">Image Information</view>
-				</view>
-				<view class="arrow"></view>
-			</view>
-			<view class="card">
-				<img class="img" src="@/static/midLevel/innerIndex/icon3.png">
-				<view class="mid">
-					<view class="ch-Zn">集团客户</view>
-					<view class="en">Group Clients</view>
-				</view>
-				<view class="arrow"></view>
-			</view>
-			<view class="card">
-				<img class="img" src="@/static/midLevel/innerIndex/icon4.png">
-				<view class="mid">
-					<view class="ch-Zn">预警查询</view>
-					<view class="en">Early Warning</view>
-				</view>
-				<view class="arrow"></view>
-			</view>
-		</view>
-	</view>
+  <view>
+    <cu-custom :is-back="false">
+      <block slot="content">村民贷系统</block>
+    </cu-custom>
+    <view class="main">
+      <view class="card">
+        <img class="img" src="@/static/midLevel/innerIndex/icon1.png">
+        <view class="mid">
+          <view class="ch-Zn">客户信息</view>
+          <view class="en">Customer Information</view>
+        </view>
+        <view class="arrow" />
+      </view>
+      <view class="card">
+        <img class="img" src="@/static/midLevel/innerIndex/icon2.png">
+        <view class="mid">
+          <view class="ch-Zn">影像信息</view>
+          <view class="en">Image Information</view>
+        </view>
+        <view class="arrow" />
+      </view>
+      <view class="card">
+        <img class="img" src="@/static/midLevel/innerIndex/icon3.png">
+        <view class="mid">
+          <view class="ch-Zn">集团客户</view>
+          <view class="en">Group Clients</view>
+        </view>
+        <view class="arrow" />
+      </view>
+      <view class="card">
+        <img class="img" src="@/static/midLevel/innerIndex/icon4.png">
+        <view class="mid">
+          <view class="ch-Zn">预警查询</view>
+          <view class="en">Early Warning</view>
+        </view>
+        <view class="arrow" />
+      </view>
+    </view>
+  </view>
 </template>
 
 <script>
