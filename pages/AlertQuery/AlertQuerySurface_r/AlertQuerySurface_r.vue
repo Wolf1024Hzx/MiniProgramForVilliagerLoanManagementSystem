@@ -5,9 +5,6 @@
         <block slot="content">客户信息查询</block>
       </cu-custom>
     </view>
-    <view>
-      afwafeafwa
-    </view>
   </view>
 </template>
 
@@ -27,9 +24,14 @@ export default {
 <style>
 	.top-message{
 		width: 100%;
-		height: 150rpx;
+		height: 306rpx;
 		background: linear-gradient(0deg,#4E8BFF 100%,#52B0FF 100%);
 		position: absolute;
 		top: 0;
+	}
+	.block{
+		font-size: 34rpx;
+		font-family: Source Han Sans CN, Source Han Sans CN-Regular;
+		color: red;
 	}
 </style>
