@@ -32,31 +32,31 @@
 
 		},
 		{
-			"path": "pages/midLevel/SubbranchWorker/index",
+			"path": "pages/subbranch/SubbranchWorker/index",
 			"style": {
 				"navigationBarTitleText": "村民贷系统"
 			}
 		},
 		{
-			"path": "pages/midLevel/MyAccount/index",
+			"path": "pages/subbranch/MyAccount/index",
 			"style": {
 				"navigationBarTitleText": "村民贷系统"
 			}
 		},
 		{
-			"path": "pages/midLevel/MyAccount/BusinessDetail/index",
+			"path": "pages/subbranch/MyAccount/BusinessDetail/index",
 			"style": {
 				"navigationBarTitleText": "村民贷系统"
 			}
 		},
 		{
-			"path": "pages/midLevel/MyAccount/PerformanceDetail/index",
+			"path": "pages/subbranch/MyAccount/PerformanceDetail/index",
 			"style": {
 				"navigationBarTitleText": "村民贷系统"
 			}
 		},
 		{
-			"path": "pages/midLevel/MyAccount/OverdateDetail/index",
+			"path": "pages/subbranch/MyAccount/OverdateDetail/index",
 			"style": {
 				"navigationBarTitleText": "村民贷系统"
 			}
@@ -119,6 +119,16 @@
 				"iconPath": "static/tabbar_icon/rank.png",
 				"selectedIconPath": "static/tabbar_icon/rank_select.png",
 				"text": "排行榜"
+			}
+		]
+	},
+	"condition" : { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [
+			{
+				"name": "中层", //模式名称
+				"path": "pages/subbranch/MyAccount/index", //启动页面，必选
+				"query": "" //启动参数，在页面的onLoad函数里面得到
 			}
 		]
 	}
