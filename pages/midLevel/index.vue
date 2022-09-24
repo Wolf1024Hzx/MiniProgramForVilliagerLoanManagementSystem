@@ -1,27 +1,27 @@
 <template>
-	<view>
-		<cu-custom :is-back="false">
-		  <block slot="content">村民贷系统</block>
-		</cu-custom>
-		<view class="main">
-			<view class="card" style="background: linear-gradient(-60deg,#67a3fc 5%, #3576fd 94%)">
-				<img class="img" src="@/static/midLevel/bussiness_icon.png">
-				<view class="mid">
-					<view class="ch-Zn">业务概括</view>
-					<view class="en">Business Overview</view>
-				</view>
-				<view class="btn" style="background: #3576fd;">查看</view>
-			</view>
-			<view class="card" style="background: linear-gradient(61deg,#fb8161 14%, #fbc880 94%);">
-				<img class="img" src="@/static/midLevel/info_icon.svg">
-				<view class="mid">
-					<view class="ch-Zn">信息查询</view>
-					<view class="en">Information Search</view>
-				</view>
-				<view class="btn" style="background: #fb8161;">查看</view>
-			</view>
-		</view>
-	</view>
+  <view>
+    <cu-custom :is-back="false">
+      <block slot="content">村民贷系统</block>
+    </cu-custom>
+    <view class="main">
+      <view class="card" style="background: linear-gradient(-60deg,#67a3fc 5%, #3576fd 94%)">
+        <img class="img" src="@/static/midLevel/bussiness_icon.png">
+        <view class="mid">
+          <view class="ch-Zn">业务概括</view>
+          <view class="en">Business Overview</view>
+        </view>
+        <view class="btn" style="background: #3576fd;">查看</view>
+      </view>
+      <view class="card" style="background: linear-gradient(61deg,#fb8161 14%, #fbc880 94%);">
+        <img class="img" src="@/static/midLevel/info_icon.svg">
+        <view class="mid">
+          <view class="ch-Zn">信息查询</view>
+          <view class="en">Information Search</view>
+        </view>
+        <view class="btn" style="background: #fb8161;">查看</view>
+      </view>
+    </view>
+  </view>
 </template>
 
 <script>
