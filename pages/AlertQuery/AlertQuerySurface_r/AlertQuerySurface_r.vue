@@ -1,14 +1,12 @@
 <template>
   <view class="alert-query-surface">
     <view class="top-message">
-      <cu-custom :isback="false">
-        <block slot="content">村民贷系统</block>
+      <cu-custom :is-back="true">
+        <block slot="content">客户信息查询</block>
       </cu-custom>
     </view>
-    <view class="mid">
-      <view v-text="aaaaaa">
-        aaas
-      </view>
+    <view>
+      afwafeafwa
     </view>
   </view>
 </template>
@@ -27,5 +25,11 @@ export default {
 </script>
 
 <style>
-
+	.top-message{
+		width: 100%;
+		height: 150rpx;
+		background: linear-gradient(0deg,#4E8BFF 100%,#52B0FF 100%);
+		position: absolute;
+		top: 0;
+	}
 </style>
