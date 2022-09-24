@@ -14,7 +14,7 @@
 					</view>
 				</view>
 				<view class="overview-box-right" :style="bgUrl[0]">
-					<image class="image-inner" src="../../../static/overview/overview_2/personal.png"></image>
+					<image class="image-inner" src="@/static/overview/overview_2/personal.png"></image>
 				</view>
 			</view>
 
@@ -26,7 +26,7 @@
 					</view>
 				</view>
 				<view class="overview-box-right" :style="bgUrl[1]">
-					<image class="image-inner" src="../../../static/overview/overview_2/custom.png"></image>
+					<image class="image-inner" src="@/static/overview/overview_2/custom.png"></image>
 				</view>
 			</view>
 
@@ -38,7 +38,7 @@
 					</view>
 				</view>
 				<view class="overview-box-right" :style="bgUrl[2]">
-					<image class="image-inner" src="../../../static/overview/overview_2/detail.png"></image>
+					<image class="image-inner" src="@/static/overview/overview_2/detail.png"></image>
 				</view>
 			</view>
 
@@ -50,7 +50,7 @@
 					</view>
 				</view>
 				<view class="overview-box-right" :style="bgUrl[3]">
-					<image class="image-inner" src="../../../static/overview/overview_2/cal.png"></image>
+					<image class="image-inner" src="@/static/overview/overview_2/cal.png"></image>
 				</view>
 			</view>
 			<view style="height: 50rpx;"></view>
@@ -61,14 +61,14 @@
 <script>
 	import {
 		pathToBase64
-	} from '../../../js_sdk/mmmm-image-tools/index.js'
+	} from '@/js_sdk/mmmm-image-tools/index.js'
 	export default {
 		data() {
 			return {
-				bgUrl: ['/static/overview/overview_2/personal_bg.png',
-					'/static/overview/overview_2/custom_bg.png',
-					'/static/overview/overview_2/detail_bg.png',
-					'/static/overview/overview_2/cal_bg.png'
+				bgUrl: ['@static/overview/overview_2/personal_bg.png',
+					'@static/overview/overview_2/custom_bg.png',
+					'@static/overview/overview_2/detail_bg.png',
+					'@static/overview/overview_2/cal_bg.png'
 				],
 			}
 		},

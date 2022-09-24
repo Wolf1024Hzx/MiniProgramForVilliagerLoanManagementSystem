@@ -18,7 +18,7 @@
 </template>
 
 <script setup>
-	import HeaderBg from '../../components/HeaderBg.vue'
+	import HeaderBg from '@/components/HeaderBg.vue'
 	export default {
 		components: {
 			HeaderBg
@@ -30,32 +30,32 @@
 						cn: '我的管户',
 						en: 'My Account',
 						color: '#EAF6FE',
-						bgImg: '../../static/subbranchWorker/Account-bg@3x.png',
-						logo: '../../static/subbranchWorker/Account@3x.png'
+						bgImg: '@/static/subbranchWorker/Account-bg@3x.png',
+						logo: '@/static/subbranchWorker/Account@3x.png'
 					},
 					{
 						id: 2,
 						cn: '客户信息',
 						en: 'Customer Information',
 						color: '#FAEFEA',
-						bgImg: '../../static/subbranchWorker/info-bg@3x.png',
-						logo: '../../static/subbranchWorker/info@3x.png'
+						bgImg: '@/static/subbranchWorker/info-bg@3x.png',
+						logo: '@/static/subbranchWorker/info@3x.png'
 					},
 					{
 						id: 3,
 						cn: '影像信息',
 						en: 'Image Information',
 						color: '#E0E5F7',
-						bgImg: '../../static/subbranchWorker/image-bg@3x.png',
-						logo: '../../static/subbranchWorker/image@3x.png'
+						bgImg: '@/static/subbranchWorker/image-bg@3x.png',
+						logo: '@/static/subbranchWorker/image@3x.png'
 					},
 					{
 						id: 4,
 						cn: '金融助手',
 						en: 'Financial Assistant',
 						color: '#F7E0E2',
-						bgImg: '../../static/subbranchWorker/cal-bg@3x.png',
-						logo: '../../static/subbranchWorker/cal@3x.png'
+						bgImg: '@/static/subbranchWorker/cal-bg@3x.png',
+						logo: '@/static/subbranchWorker/cal@3x.png'
 					}
 				]
 			}

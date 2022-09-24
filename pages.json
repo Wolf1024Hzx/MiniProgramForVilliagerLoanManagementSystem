@@ -1,7 +1,7 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/overview/overview_1/overview_1",
+			"path": "pages/highLevel/overview/overview_1/overview_1",
 			"style": {
 				"enablePullDownRefresh": false
 			}
@@ -13,18 +13,18 @@
 			}
 		},
 		{
-			"path": "pages/rank/rank_index/rank_index",
+			"path": "pages/highLevel/rank/rank_index/rank_index",
 			"style": {
 				"enablePullDownRefresh": false
 			}
 		},
 		{
-			"path": "pages/overview/overview_2/overview_2",
+			"path": "pages/highLevel/overview/overview_2/overview_2",
 			"style": {
 				"enablePullDownRefresh": false
 			}
 		}, {
-			"path": "pages/rank/rank_detail/rank_detail",
+			"path": "pages/highLevel/rank/rank_detail/rank_detail",
 			"style": {
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false
@@ -32,42 +32,60 @@
 
 		},
 		{
-			"path": "pages/SubbranchWorker/index",
+			"path": "pages/midLevel/SubbranchWorker/index",
 			"style": {
 				"navigationBarTitleText": "村民贷系统"
 			}
 		},
 		{
-			"path": "pages/MyAccount/index",
+			"path": "pages/midLevel/MyAccount/index",
 			"style": {
 				"navigationBarTitleText": "村民贷系统"
 			}
 		},
 		{
-			"path": "pages/MyAccount/BusinessDetail/index",
+			"path": "pages/midLevel/MyAccount/BusinessDetail/index",
 			"style": {
 				"navigationBarTitleText": "村民贷系统"
 			}
 		},
 		{
-			"path": "pages/MyAccount/PerformanceDetail/index",
+			"path": "pages/midLevel/MyAccount/PerformanceDetail/index",
 			"style": {
 				"navigationBarTitleText": "村民贷系统"
 			}
 		},
 		{
-			"path": "pages/MyAccount/OverdateDetail/index",
+			"path": "pages/midLevel/MyAccount/OverdateDetail/index",
 			"style": {
 				"navigationBarTitleText": "村民贷系统"
 			}
 		},
 		{
-			"path": "pages/FinancialAssistant/index",
+			"path": "pages/midLevel/FinancialAssistant/index",
 			"style": {
 				"navigationBarTitleText": "村民贷系统"
 			}
 		}
-	],
+        ,{
+            "path" : "pages/AlertQuery/AlertQueryPop_r/AlertQueryPop_r",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+		,{
+		    "path" : "pages/AlertQuery/AlertQuerySurface_r/AlertQuerySurface_r",
+		    "style" :                                                                                    
+		    {
+		        "navigationBarTitleText": "",
+		        "enablePullDownRefresh": false
+		    }
+		    
+		}
+    ],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "uni-app",
@@ -85,7 +103,7 @@
 		"borderStyle": "black",
 		"backgroundColor": "#FFFFFF",
 		"list": [{
-				"pagePath": "pages/overview/overview_1/overview_1",
+				"pagePath": "pages/highLevel/overview/overview_1/overview_1",
 				"iconPath": "static/tabbar_icon/overview.png",
 				"selectedIconPath": "static/tabbar_icon/overview_select.png",
 				"text": "业务概况"
@@ -97,7 +115,7 @@
 				"text": "分布情况"
 			},
 			{
-				"pagePath": "pages/rank/rank_index/rank_index",
+				"pagePath": "pages/highLevel/rank/rank_index/rank_index",
 				"iconPath": "static/tabbar_icon/rank.png",
 				"selectedIconPath": "static/tabbar_icon/rank_select.png",
 				"text": "排行榜"
