@@ -17,7 +17,7 @@
 						style="height: 40rpx; width: 40rpx; vertical-align: middle;"></image>
 					<view
 						style="display:inline-block; vertical-align:middle; margin-left:16rpx; position:relative; width: 506rpx;">
-						<text class="selector-text">支行 :</text>
+						<text class="selector-text">支行 :</text> 
 						<picker :value="subbranchIndex" :range="subbranch" @change="changeSubbranch"
 							style="width: 390rpx;">
 							<text class="selector-text" style="color: #aaabaa;">{{subbranch[subbranchIndex]}}</text>
