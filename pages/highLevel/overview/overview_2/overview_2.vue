@@ -3,7 +3,6 @@
     <cu-custom :is-back="false">
       <block slot="content">村民贷系统</block>
     </cu-custom>
-    <view class="bg" />
     <view style="position: relative;z-index: 1;">
       <view class="overview-box" style="background: #eaf6fe;margin-top: 80rpx;">
         <view class="overview-box-left">
@@ -95,15 +94,6 @@ export default {
 </script>
 
 <style>
-	.bg {
-		width: 100%;
-		height: 187rpx;
-		background: linear-gradient(0deg, #4e8bff 5%, #52b0ff 94%);
-		position: absolute;
-		z-index: 0;
-		top: 0;
-	}
-
 	.overview-box {
 		width: 690rpx;
 		height: 240rpx;
