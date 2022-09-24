@@ -17,11 +17,12 @@
         </view>
       </view>
 			
-      <CustomerInformationSearch />
-      <BusinessInformation />
-      <template>
-        <!-- 这里放其他组件 -->
-      </template>
+      <slot name="CustomerInformationSearch">
+        <CustomerInformationSearch />
+      </slot>
+      <slot name="BusinessInformation">
+        <BusinessInformation />
+      </slot>
     </view>
   </view>
 </template>
