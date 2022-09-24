@@ -2,7 +2,7 @@
   <view>
     <!-- <uni-search-bar placeholder="请输入您的证件号码" bg-color="#FFFFFF" cancel-button="none" clear-button="auto" /> -->
     <view class="search">
-      <input style="width: 100%;" type="text" placeholder="请输入您的证件号码">
+      <input style="width: 100%;" type="idcard" placeholder="请输入您的证件号码">
       <img class="search-icon" src="@/static/midLevel/search.png">
     </view>
   </view>
