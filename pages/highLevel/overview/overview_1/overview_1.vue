@@ -8,13 +8,12 @@
     <view class="bg">
       <view class="bg-inner" />
     </view>
-
     <!-- 页面内容 -->
     <view style="position: relative; z-index: 1;">
       <view class="selector-outer">
         <view>
           <image
-            src="../../../static/overview/overview_1/subbranch_ico.png"
+            src="@/static/overview/overview_1/subbranch_ico.png"
             style="height: 40rpx; width: 40rpx; vertical-align: middle;"
           />
           <view style="display:inline-block; vertical-align:middle; margin-left:16rpx; position:relative; width: 506rpx;">
@@ -28,7 +27,7 @@
               <text class="selector-text" style="color: #aaabaa;">{{ subbranch[subbranchIndex] }}</text>
             </picker>
             <image
-              src="../../../static/overview/overview_1/selector_arrow.png"
+              src="@/static/overview/overview_1/selector_arrow.png"
               style="width: 25rpx; height: 13rpx; float: right; margin-top: 16rpx"
             />
             <view class="gray-line" />
@@ -37,7 +36,7 @@
 
         <view style="margin-top: 54rpx;">
           <image
-            src="../../../static/overview/overview_1/interval_ico.png"
+            src="@/static/overview/overview_1/interval_ico.png"
             style="height: 40rpx; width: 40rpx; vertical-align: middle;"
           />
           <view style="display:inline-block; vertical-align:middle; margin-left:16rpx; position:relative; width: 506rpx;">
@@ -46,7 +45,7 @@
               <text class="selector-text" style="color: #aaabaa;">{{ interval[intervalIndex] }}</text>
             </picker>
             <image
-              src="../../../static/overview/overview_1/selector_arrow.png"
+              src="@/static/overview/overview_1/selector_arrow.png"
               style="width: 25rpx; height: 13rpx; float: right; margin-top: 16rpx"
             />
             <view class="gray-line" />
@@ -131,7 +130,7 @@
               查看更多
             </text>
             <image
-              src="../../../static/overview/overview_1/double_arrow.png"
+              src="@/static/overview/overview_1/double_arrow.png"
               style="width: 22rpx;height: 28rpx; position: relative; top: 3rpx; margin-left: 8rpx"
             />
           </view>

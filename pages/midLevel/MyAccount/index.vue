@@ -76,7 +76,7 @@
 </template>
 
 <script setup>
-	import HeaderBg from '../../components/HeaderBg.vue'
+	import HeaderBg from '@/components/HeaderBg.vue'
 	export default {
 		components: {
 			HeaderBg
