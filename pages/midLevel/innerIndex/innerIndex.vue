@@ -5,7 +5,7 @@
     </cu-custom>
     <view class="main">
       <view class="card">
-        <img class="img" src="@/static/midLevel/innerIndex/icon1.png">
+        <img class="img" :src="getImgUrl('midLevel/innerIndex/icon1.png')">
         <view class="mid">
           <view class="ch-Zn">客户信息</view>
           <view class="en">Customer Information</view>
@@ -13,7 +13,7 @@
         <view class="arrow" />
       </view>
       <view class="card">
-        <img class="img" src="@/static/midLevel/innerIndex/icon2.png">
+        <img class="img" :src="getImgUrl('midLevel/innerIndex/icon2.png')">
         <view class="mid">
           <view class="ch-Zn">影像信息</view>
           <view class="en">Image Information</view>
@@ -21,7 +21,7 @@
         <view class="arrow" />
       </view>
       <view class="card">
-        <img class="img" src="@/static/midLevel/innerIndex/icon3.png">
+        <img class="img" :src="getImgUrl('midLevel/innerIndex/icon3.png')">
         <view class="mid">
           <view class="ch-Zn">集团客户</view>
           <view class="en">Group Clients</view>
@@ -29,7 +29,7 @@
         <view class="arrow" />
       </view>
       <view class="card">
-        <img class="img" src="@/static/midLevel/innerIndex/icon4.png">
+        <img class="img" :src="getImgUrl('midLevel/innerIndex/icon4.png')">
         <view class="mid">
           <view class="ch-Zn">预警查询</view>
           <view class="en">Early Warning</view>
@@ -41,6 +41,13 @@
 </template>
 
 <script>
+export default {
+  methods: {
+    getImgUrl(url) {
+      return this.$resourceRoute(url)
+    }
+  }
+}
 </script>
 
 <style scoped>
