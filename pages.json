@@ -82,29 +82,17 @@
 						"navigationBarTitleText": "",
 						"enablePullDownRefresh": false
 					}
-				},
-				{
-					"path": "imageInfo/imageInfo",
-					"style": {
-						"navigationBarTitleText": "",
-						"enablePullDownRefresh": false
-					}
-				},
-				{
-					"path": "guarantee/guarantee",
-					"style": {
-						"navigationBarTitleText": "",
-						"enablePullDownRefresh": false
-					}
-				},
-				{
-					"path": "guaranteeCircle/guaranteeCircle",
-					"style": {
-						"navigationBarTitleText": "",
-						"enablePullDownRefresh": false
-					}
 				}
-			]
+                ,{
+                    "path" : "navigate/navigate",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+            ]
 		},
 		// 支行包
 		{

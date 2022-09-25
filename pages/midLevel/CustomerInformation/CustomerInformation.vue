@@ -20,20 +20,20 @@
       <slot name="CustomerInformationSearch">
         <CustomerInformationSearch />
       </slot>
-      <slot name="BusinessInformation">
+      <!-- <slot name="BusinessInformation">
         <BusinessInformation />
-      </slot>
+      </slot> -->
     </view>
   </view>
 </template>
 
 <script>
 import CustomerInformationSearch from './CustomerInformationSearch/CustomerInformationSearch.vue'
-import BusinessInformation from './BusinessInformation/BusinessInformation.vue'
+// import BusinessInformation from './BusinessInformation/BusinessInformation.vue'
 export default {
   components: {
     CustomerInformationSearch,
-    BusinessInformation
+    // BusinessInformation
   },
   data() {
     return {
