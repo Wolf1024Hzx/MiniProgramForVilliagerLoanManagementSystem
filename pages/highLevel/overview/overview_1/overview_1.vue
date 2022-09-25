@@ -67,7 +67,7 @@
       </view>
 
       <!-- 未点确定时的总体内容 -->
-      <view :style="{display: selected ? 'none' : ''}">
+      <view v-show="!selected">
         <view
           style="font-size: 32rpx; font-weight: 700; color: #2d2f31;
 					font-family: Source Han Sans CN, Source Han Sans CN-Bold; margin: 40rpx 0 0 40rpx"
@@ -75,7 +75,7 @@
           村民贷概况
         </view>
 
-        <view class="overview-1">
+        <view class="overview-1" @tap="nav">
           <view style="flex: 1;">
             <view class="text-1">300万</view>
             <view class="text-2">贷款余额(元)</view>
@@ -134,15 +134,15 @@
               style="width: 22rpx;height: 28rpx; position: relative; top: 3rpx; margin-left: 8rpx"
             />
           </view>
-        </view>F
+        </view>
       </view>
 
       <!-- <view :style="{display: selected ? '' : 'none'}" style="width: 670rpx;margin: 36rpx auto;">
         <uni-ec-canvas id="line-chart" class="uni-ec-canvas" :ec="ec" canvas-id="multi-charts-line" />
       </view> -->
-      <qiun-title-bar title="基本折线区域图" />
-      <view class="charts-box">
-        <qiun-data-charts type="area" :chart-data="chartsDataArea1" />
+      <qiun-title-bar v-show="selected" title="基本折线区域图" />
+      <view v-show="selected" class="charts-box">
+        <qiun-data-charts type="area" :chart-data="chartsDataArea1" :reload="selected" animation="false" />
       </view>
 
       <view style="display: none;">{{ getStrFromStore() }}</view>
@@ -158,7 +158,7 @@ export default {
       subbranchIndex: 0,
       interval: ['每年', '每季度', '每月', '每周'],
       intervalIndex: 0,
-      selected: true,
+      selected: false,
       chartsDataArea1: {
         'categories': ['2016', '2017', '2018', '2019', '2020', '2021'],
         'series': [{
@@ -185,13 +185,17 @@ export default {
       this.intervalIndex = e.detail.value
     },
     tapButton() {
-      uni.navigateTo({
-        url: '/pages/overview/overview_2/overview_2',
-        animationType: 'slide-in-right'
-      })
+      let flag = !this.selected
+      this.selected = flag
     },
     getImgUrl(url) {
       return this.$resourceRoute(url)
+    },
+    nav() {
+      uni.navigateTo({
+        url: '/pages/highLevel/overview/overview_2/overview_2',
+        animationType: 'slide-in-right'
+      })
     }
   },
   onLoad() {
