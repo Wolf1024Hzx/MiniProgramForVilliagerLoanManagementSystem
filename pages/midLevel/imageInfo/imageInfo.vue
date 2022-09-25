@@ -135,16 +135,14 @@ export default {
 	border-bottom: 3rpx solid #5484FD;
 }
 .service-chose {
-	width: 196rpx;
-	height: 57rpx;
+	padding: 14rpx 26rpx;
 	color: #a0a0a0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 .service-chose-active {
-	width: 196rpx;
-	height: 57rpx;
+	padding: 14rpx 26rpx;
 	color: #FFFFFF;
 	background: #5484fd;
 	border-radius: 29rpx;
