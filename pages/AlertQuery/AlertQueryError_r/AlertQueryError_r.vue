@@ -32,7 +32,7 @@
     </view>
     <view class="pop">
       <view class="info-pop">
-        <image class="img-pop-1" src="../../../static/alert/error.png" />
+        <image class="img-pop-1" :src="getImgUrl('alert/error.png')" />
         <text class="info-pop-1">该用户不在预警名单内</text>
       </view>
       <view class="btn-pop">
@@ -59,6 +59,9 @@ export default {
     },
     allright: function() {
       console.log('see you')
+    },
+    getImgUrl(url) {
+	  return this.$resourceRoute(url)
     }
   }
 }
