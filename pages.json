@@ -1,141 +1,166 @@
 {
 	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/highLevel/overview/overview_1/overview_1",
+			"path": "pages/login/login",
 			"style": {
 				"enablePullDownRefresh": false
 			}
-		},
+		}
+	],
+	"subPackages": [
+		// 高层包
 		{
-			"path": "pages/distribution/distribution_index/distribution_index",
-			"style": {
-				"enablePullDownRefresh": false
-			}
+			"root": "pages/highLevel/",
+			"pages": [
+				{
+					"path": "overview/overview_1/overview_1",
+					"style": {
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "overview/overview_2/overview_2",
+					"style": {
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "rank/rank_index/rank_index",
+					"style": {
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "rank/rank_detail/rank_detail",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
+				}
+			]
 		},
+		// 中层包
 		{
-			"path": "pages/highLevel/rank/rank_index/rank_index",
-			"style": {
-				"enablePullDownRefresh": false
-			}
+			"root": "pages/midLevel",
+			"pages": [
+				{
+					"path": "FinancialAssistant/index",
+					"style": {
+						"navigationBarTitleText": "村民贷系统"
+					}
+				},
+				{
+					"path": "index",
+					"style": {
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "CustomerInformation/CustomerInformation",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "CustomerInformation/CustomerInformationSearch/CustomerInformationSearch",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "CustomerInformation/BusinessInformation/BusinessInformation",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "innerIndex/innerIndex",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "imageInfo/imageInfo",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "guarantee/guarantee",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "guaranteeCircle/guaranteeCircle",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
+				}
+			]
 		},
+		// 支行包
 		{
-			"path": "pages/highLevel/overview/overview_2/overview_2",
-			"style": {
-				"enablePullDownRefresh": false
-			}
+			"root": "pages/subbranch",
+			"pages": [
+				{
+					"path": "SubbranchWorker/index",
+					"style": {
+						"navigationBarTitleText": "村民贷系统"
+					}
+				},
+				{
+					"path": "MyAccount/index",
+					"style": {
+						"navigationBarTitleText": "村民贷系统"
+					}
+				},
+				{
+					"path": "MyAccount/BusinessDetail/index",
+					"style": {
+						"navigationBarTitleText": "村民贷系统"
+					}
+				},
+				{
+					"path": "MyAccount/PerformanceDetail/index",
+					"style": {
+						"navigationBarTitleText": "村民贷系统"
+					}
+				},
+				{
+					"path": "MyAccount/OverdateDetail/index",
+					"style": {
+						"navigationBarTitleText": "村民贷系统"
+					}
+				}
+			]
 		},
+		// 预警包
 		{
-			"path": "pages/highLevel/rank/rank_detail/rank_detail",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-
-		},
-		{
-			"path": "pages/subbranch/SubbranchWorker/index",
-			"style": {
-				"navigationBarTitleText": "村民贷系统"
-			}
-		},
-		{
-			"path": "pages/subbranch/MyAccount/index",
-			"style": {
-				"navigationBarTitleText": "村民贷系统"
-			}
-		},
-		{
-			"path": "pages/subbranch/MyAccount/BusinessDetail/index",
-			"style": {
-				"navigationBarTitleText": "村民贷系统"
-			}
-		},
-		{
-			"path": "pages/subbranch/MyAccount/PerformanceDetail/index",
-			"style": {
-				"navigationBarTitleText": "村民贷系统"
-			}
-		},
-		{
-			"path": "pages/subbranch/MyAccount/OverdateDetail/index",
-			"style": {
-				"navigationBarTitleText": "村民贷系统"
-			}
-		},
-		{
-			"path": "pages/midLevel/FinancialAssistant/index",
-			"style": {
-				"navigationBarTitleText": "村民贷系统"
-			}
-		},
-		{
-			"path": "pages/midLevel/index",
-			"style": {
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-			"path": "pages/AlertQuery/AlertQueryError_r/AlertQueryError_r",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-			"path": "pages/AlertQuery/AlertQuerySuccess_r/AlertQuerySuccess_r",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-			"path": "pages/midLevel/CustomerInformation/CustomerInformation",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-			"path": "pages/midLevel/CustomerInformation/CustomerInformationSearch/CustomerInformationSearch",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-			"path": "pages/midLevel/CustomerInformation/BusinessInformation/BusinessInformation",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-			"path": "pages/midLevel/innerIndex/innerIndex",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-			"path": "pages/midLevel/imageInfo/imageInfo",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-			"path": "pages/midLevel/guarantee/guarantee",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
-		},
-		{
-			"path": "pages/midLevel/guaranteeCircle/guaranteeCircle",
-			"style": {
-				"navigationBarTitleText": "",
-				"enablePullDownRefresh": false
-			}
+			"root": "pages/AlertQuery",
+			"pages": [
+				{
+					"path": "AlertQueryError_r/AlertQueryError_r",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
+				},
+				{
+					"path": "AlertQuerySuccess_r/AlertQuerySuccess_r",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
+				}
+			]
 		}
 	],
 	"globalStyle": {
@@ -149,31 +174,6 @@
 		}
 	},
 	"uniIdRouter": {},
-	"tabBar": {
-		"color": "#989CA4",
-		"selectedColor": "#3186E2",
-		"borderStyle": "black",
-		"backgroundColor": "#FFFFFF",
-		"list": [{
-				"pagePath": "pages/highLevel/overview/overview_1/overview_1",
-				"iconPath": "static/tabbar_icon/overview.png",
-				"selectedIconPath": "static/tabbar_icon/overview_select.png",
-				"text": "业务概况"
-			},
-			{
-				"pagePath": "pages/distribution/distribution_index/distribution_index",
-				"iconPath": "static/tabbar_icon/distribution.png",
-				"selectedIconPath": "static/tabbar_icon/distribution_select.png",
-				"text": "分布情况"
-			},
-			{
-				"pagePath": "pages/highLevel/rank/rank_index/rank_index",
-				"iconPath": "static/tabbar_icon/rank.png",
-				"selectedIconPath": "static/tabbar_icon/rank_select.png",
-				"text": "排行榜"
-			}
-		]
-	},
 	"condition": { //模式配置，仅开发期间生效
 		"current": 0, //当前激活的模式(list 的索引项)
 		"list": [{

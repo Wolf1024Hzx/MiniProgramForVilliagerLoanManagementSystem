@@ -137,8 +137,12 @@
         </view>F
       </view>
 
-      <view :style="{display: selected ? '' : 'none'}" style="width: 670rpx;margin: 36rpx auto;">
+      <!-- <view :style="{display: selected ? '' : 'none'}" style="width: 670rpx;margin: 36rpx auto;">
         <uni-ec-canvas id="line-chart" class="uni-ec-canvas" :ec="ec" canvas-id="multi-charts-line" />
+      </view> -->
+      <qiun-title-bar title="基本折线区域图" />
+      <view class="charts-box">
+        <qiun-data-charts type="area" :chart-data="chartsDataArea1" />
       </view>
 
       <view style="display: none;">{{ getStrFromStore() }}</view>
@@ -147,11 +151,7 @@
 </template>
 
 <script>
-import uniEcCanvas from '@/components/uni-ec-canvas/uni-ec-canvas'
 export default {
-  components: {
-    uniEcCanvas
-  },
   data() {
     return {
       subbranch: ['全行', '龙华支行', '石岩支行', '新安支行', '坪地支行', '宝龙支行', '龙城支行'],
@@ -159,42 +159,18 @@ export default {
       interval: ['每年', '每季度', '每月', '每周'],
       intervalIndex: 0,
       selected: true,
-      ec: {
-        option: {
-          tooltip: {
-            trigger: 'axis'
-          },
-          legend: {
-            data: ['平均利率', '户均贷款余额']
-          },
-          grid: {
-            left: '3%',
-            right: '4%',
-            bottom: '3%',
-            containLabel: true
-          },
-          xAxis: {
-            type: 'category',
-            boundaryGap: false,
-            data: ['一月', '二月', '三月', '四月', '五月', '六月', '七月']
-          },
-          yAxis: {
-            type: 'value'
-          },
-          series: [{
-            name: '平均利率',
-            type: 'line',
-            stack: 'Total',
-            data: [120, 132, 101, 134, 90, 230, 210]
-          },
-          {
-            name: '户均贷款余额',
-            type: 'line',
-            stack: 'Total',
-            data: [220, 182, 191, 234, 290, 330, 310]
-          }
-          ]
-        }
+      chartsDataArea1: {
+        'categories': ['2016', '2017', '2018', '2019', '2020', '2021'],
+        'series': [{
+          'name': '成交量A',
+          'data': [35, 8, 25, 37, 4, 20]
+        }, {
+          'name': '成交量B',
+          'data': [70, 40, 65, 100, 44, 68]
+        }, {
+          'name': '成交量C',
+          'data': [100, 80, 95, 150, 112, 132]
+        }]
       }
     }
   },
@@ -349,7 +325,7 @@ export default {
 		margin: 20rpx auto 0;
 		color: #fefefc;
 		text-align: center;
-	} 
+	}
 
 	.overview-4 {
 		width: 650rpx;
