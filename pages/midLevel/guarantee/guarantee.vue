@@ -52,7 +52,7 @@ import CustomerInformation from '../CustomerInformation/CustomerInformation.vue'
 export default {
 	data() {
 		return {
-			classifyStatus: 0,
+			classifyStatus: 3,
 			serviceStatus: 0,
 			classifyChoses: ['业务信息','额度依据','关联业务','对外担保','担保圈'],
 			serviceChoses: ['概况', '正在担保', '结束担保'],
