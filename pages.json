@@ -6,22 +6,12 @@
 				"enablePullDownRefresh": false
 			}
 		}
-	    ,{
-            "path" : "pages/Query/EnterpriseCustomerQuery/EnterpriseCustomerQuery",
-            "style" :                                                                                    
-            {
-                "navigationBarTitleText": "",
-                "enablePullDownRefresh": false
-            }
-            
-        }
-    ],
+	],
 	"subPackages": [
 		// 高层包
 		{
 			"root": "pages/highLevel/",
-			"pages": [
-				{
+			"pages": [{
 					"path": "overview/overview_1/overview_1",
 					"style": {
 						"enablePullDownRefresh": false
@@ -51,8 +41,7 @@
 		// 中层包
 		{
 			"root": "pages/midLevel",
-			"pages": [
-				{
+			"pages": [{
 					"path": "FinancialAssistant/index",
 					"style": {
 						"navigationBarTitleText": "村民贷系统"
@@ -118,8 +107,7 @@
 		// 支行包
 		{
 			"root": "pages/subbranch",
-			"pages": [
-				{
+			"pages": [{
 					"path": "SubbranchWorker/index",
 					"style": {
 						"navigationBarTitleText": "村民贷系统"
@@ -151,23 +139,30 @@
 				}
 			]
 		},
-		// 预警包
+		// Query包
 		{
-			"root": "pages/Query/AlertQuery",
-			"pages": [
-				{
-					"path": "AlertQueryError_r/AlertQueryError_r",
+			"root": "pages/Query/",
+			"pages": [{
+					"path": "AlertQuery/AlertQueryError_r/AlertQueryError_r",
 					"style": {
 						"navigationBarTitleText": "",
 						"enablePullDownRefresh": false
 					}
 				},
 				{
-					"path": "AlertQuerySuccess_r/AlertQuerySuccess_r",
+					"path": "AlertQuery/AlertQuerySuccess_r/AlertQuerySuccess_r",
 					"style": {
 						"navigationBarTitleText": "",
 						"enablePullDownRefresh": false
 					}
+				},
+				{
+					"path": "EnterpriseCustomerQuery/EnterpriseCustomerQuery",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
+
 				}
 			]
 		}
