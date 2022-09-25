@@ -1,6 +1,6 @@
 <template>
   <view>
-    <cu-custom :is-back="false">
+    <cu-custom :is-back="true">
       <block slot="content">村民贷系统</block>
     </cu-custom>
     <view style="position: relative;z-index: 1;">

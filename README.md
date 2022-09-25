@@ -2,10 +2,9 @@
 基于uni-app村民贷小程序开发代码仓库
 ## 插件说明
 - 图表请使用ucharts/echarts进行开发，样例在[秋云 ucharts echarts 高性能跨全端图表组件](https://ext.dcloud.net.cn/plugin?id=271)示例项目中
-- 请于HBuilder插件市场下载eslint-js、eslint-plugin-vue插件，规范化开发(eslint配置已完成，插件仅作实施校验)
+- 请于HBuilder插件市场下载[eslint-js](https://ext.dcloud.net.cn/plugin?id=2037)、[eslint-plugin-vue](https://ext.dcloud.net.cn/plugin?id=2005)插件，规范化开发(eslint配置已完成，插件仅作实时校验)
 
-***
-## To开发者
+## 静态资源获取说明
 项目静态资源，如图标，均从静态资源服务器获取，在main.js中已挂载全局函数$resourceRoute:
 ```javascript
 Vue.prototype.$resourceRoute = function(route) {
