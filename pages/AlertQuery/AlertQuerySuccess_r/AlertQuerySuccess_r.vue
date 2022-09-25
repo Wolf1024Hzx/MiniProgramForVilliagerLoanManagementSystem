@@ -19,7 +19,7 @@
       <!--搜索证件号-->
       <view class="search">
         <input style="width: 100%;" type="text" placeholder="请输入您的证件号码">
-        <img class="search-icon" src="@/static/midLevel/search.png">
+        <img class="search-icon" :src="getImgUrl('midLevel/search.png')">
       </view>
       <!--信息结果-->
       <view class="info" style="position: absolute;">
@@ -44,19 +44,22 @@
   </view>
 </template>
 
-<script>
+<script> 
 export default {
   data() {
     return {
       chooseLeftBtn: true,
       idcard: 400000200001011111,
       time: '2022年11月21日',
-      reason: '??????????????????????\n????????????????????'
+      reason: '?????????????????????????\n????????????????????'
     }
   },
   methods: {
     tapBtn: function(args) {
       this.chooseLeftBtn = args.currentTarget.dataset.btn === 'left'
+    },
+    getImgUrl(url) {
+      return this.$resourceRoute(url)
     }
   }
 }

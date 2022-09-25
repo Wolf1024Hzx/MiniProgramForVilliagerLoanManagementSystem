@@ -75,14 +75,14 @@
 			}
 		},
 		{
-			"path": "pages/AlertQuery/AlertQueryPop_r/AlertQueryPop_r",
+			"path": "pages/AlertQuery/AlertQueryError_r/AlertQueryError_r",
 			"style": {
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false
 			}
 		},
 		{
-			"path": "pages/AlertQuery/AlertQuerySurface_r/AlertQuerySurface_r",
+			"path": "pages/AlertQuery/AlertQuerySuccess_r/AlertQuerySuccess_r",
 			"style": {
 				"navigationBarTitleText": "",
 				"enablePullDownRefresh": false

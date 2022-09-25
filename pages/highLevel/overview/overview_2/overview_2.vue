@@ -12,7 +12,7 @@
           </view>
         </view>
         <view class="overview-box-right" :style="bgUrl[0]">
-          <image class="image-inner" src="@/static/overview/overview_2/personal.png" />
+          <image class="image-inner" :src="getImgUrl('overview/overview_2/personal.png')" />
         </view>
       </view>
 
@@ -24,7 +24,7 @@
           </view>
         </view>
         <view class="overview-box-right" :style="bgUrl[1]">
-          <image class="image-inner" src="@/static/overview/overview_2/custom.png" />
+          <image class="image-inner" :src="getImgUrl('overview/overview_2/custom.png')" />
         </view>
       </view>
 
@@ -36,7 +36,7 @@
           </view>
         </view>
         <view class="overview-box-right" :style="bgUrl[2]">
-          <image class="image-inner" src="@/static/overview/overview_2/detail.png" />
+          <image class="image-inner" :src="getImgUrl('overview/overview_2/detail.png')" />
         </view>
       </view>
 
@@ -48,7 +48,7 @@
           </view>
         </view>
         <view class="overview-box-right" :style="bgUrl[3]">
-          <image class="image-inner" src="@/static/overview/overview_2/cal.png" />
+          <image class="image-inner" :src="getImgUrl('overview/overview_2/cal.png')" />
         </view>
       </view>
       <view style="height: 50rpx;" />
@@ -57,34 +57,27 @@
 </template>
 
 <script>
-import {
-  pathToBase64
-} from '@/js_sdk/mmmm-image-tools/index.js'
 export default {
   data() {
     return {
-      bgUrl: ['@static/overview/overview_2/personal_bg.png',
-        '@static/overview/overview_2/custom_bg.png',
-        '@static/overview/overview_2/detail_bg.png',
-        '@static/overview/overview_2/cal_bg.png'
+      bgUrl: ['overview/overview_2/personal_bg.png',
+        'overview/overview_2/custom_bg.png',
+        'overview/overview_2/detail_bg.png',
+        'overview/overview_2/cal_bg.png'
       ]
     }
   },
   methods: {
-    async getBaseBgUrl(path) {
+    getBaseBgUrl() {
       let list = []
       let urls = this.bgUrl
       for (let i = 0; i < urls.length; i += 1) {
-        await pathToBase64(urls[i])
-          .then(base64 => {
-            let temp = 'background-image:url(' + base64 + ')'
-            list.push(temp)
-          })
-          .catch(error => {
-            console.error(error)
-          })
+        list.push('background-image:url(' + this.getImgUrl(urls[i]) + ')')
       }
       this.bgUrl = list
+    },
+    getImgUrl(url) {
+      return this.$resourceRoute(url)
     }
   },
   onLoad() {
