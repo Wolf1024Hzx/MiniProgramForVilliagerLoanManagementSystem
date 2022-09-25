@@ -1,78 +1,81 @@
 <template>
-	<view>
-		<CustomerInformation>
-			<text slot="BusinessInformation"></text>
-		</CustomerInformation>
-		<view class="main">
-			<view class="navigate">
-				<view class="classify">
-					<view @click="bindClassify(0)" :class="classifyStatus === 0 ? 'classify-chose-active' : 'classify-chose'">管理类</view>
-					<view @click="bindClassify(1)" :class="classifyStatus === 1 ? 'classify-chose-active' : 'classify-chose'">要件类</view>
-				</view>
-				<view class="service">
-					<view @click="bindService(0)" :class="serviceStatus === 0 ? 'service-chose-active' : 'service-chose'">未结清业务</view>
-					<view @click="bindService(1)" :class="serviceStatus === 1 ? 'service-chose-active' : 'service-chose'">已结清业务</view>
-				</view>
-			</view>
-			<view class="image-info">
-				<view class="tip">选择下方所需图片</view>
-				<view v-for="(item, index) in images" class="card" @click="bindImage(index)">
-					<view class="card-name">{{item.name}}</view>
-					<view class="card-body" :class="imageStatus === index ? 'active-border' : ''">
-						<img class="card-img" :src="item.url">
-						<view v-if="imageStatus === index">
-							<view class="left-top">{{item.name}}</view>
-							<view class="right-bottom"></view>
-							<img class="ok-icon" src="@/static/midLevel/imageInfo/hk_right.png">
-						</view>
-					</view>
-				</view>
-			</view>
-			<view class="hail">
-				<view class="btn-left">下载所有图片</view>
-				<view class="btn-right">下载已勾选</view>
-			</view>
-		</view>
-	</view>
+  <view>
+    <CustomerInformation>
+      <text slot="BusinessInformation" />
+    </CustomerInformation>
+    <view class="main">
+      <view class="navigate">
+        <view class="classify">
+          <view :class="classifyStatus === 0 ? 'classify-chose-active' : 'classify-chose'" @click="bindClassify(0)">管理类</view>
+          <view :class="classifyStatus === 1 ? 'classify-chose-active' : 'classify-chose'" @click="bindClassify(1)">要件类</view>
+        </view>
+        <view class="service">
+          <view :class="serviceStatus === 0 ? 'service-chose-active' : 'service-chose'" @click="bindService(0)">未结清业务</view>
+          <view :class="serviceStatus === 1 ? 'service-chose-active' : 'service-chose'" @click="bindService(1)">已结清业务</view>
+        </view>
+      </view>
+      <view class="image-info">
+        <view class="tip">选择下方所需图片</view>
+        <view v-for="(item, index) in images" class="card" @click="bindImage(index)">
+          <view class="card-name">{{ item.name }}</view>
+          <view class="card-body" :class="imageStatus === index ? 'active-border' : ''">
+            <img class="card-img" :src="item.url">
+            <view v-if="imageStatus === index">
+              <view class="left-top">{{ item.name }}</view>
+              <view class="right-bottom" />
+              <img class="ok-icon" :src="getImgUrl('midLevel/imageInfo/hk_right.png')">
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class="hail">
+        <view class="btn-left">下载所有图片</view>
+        <view class="btn-right">下载已勾选</view>
+      </view>
+    </view>
+  </view>
 </template>
 
 <script>
 import CustomerInformation from '../CustomerInformation/CustomerInformation.vue'
 export default {
-	data() {
-		return {
-			classifyStatus: 0,
-			serviceStatus: 0,
-			imageStatus: -1,
-			images: [{
-				name: "身份证",
-				url: ""
-			},
-			{
-				name: "户口本",
-				url: ""
-			},
-			{
-				name: "结婚证",
-				url: "https://i1.hdslb.com/bfs/face/aaf33dced1941af0946f37c62f4b48fcaba9c9a2.jpg@92w_92h.webp"
-			},
-			]
-		}
-	},
-	methods: {
-		bindClassify(status) {
-			this.classifyStatus = status
-		},
-		bindService(status) {
-			this.serviceStatus = status
-		},
-		bindImage(status) {
-			this.imageStatus = status
-		}
-	},
-	components: {
-		CustomerInformation
-	}
+  components: {
+    CustomerInformation
+  },
+  data() {
+    return {
+      classifyStatus: 0,
+      serviceStatus: 0,
+      imageStatus: -1,
+      images: [{
+        name: '身份证',
+        url: ''
+      },
+      {
+        name: '户口本',
+        url: ''
+      },
+      {
+        name: '结婚证',
+        url: 'https://i1.hdslb.com/bfs/face/aaf33dced1941af0946f37c62f4b48fcaba9c9a2.jpg@92w_92h.webp'
+      }
+      ]
+    }
+  },
+  methods: {
+    bindClassify(status) {
+      this.classifyStatus = status
+    },
+    bindService(status) {
+      this.serviceStatus = status
+    },
+    bindImage(status) {
+      this.imageStatus = status
+    },
+    getImgUrl(url) {
+      return this.$resourceRoute(url)
+    }
+  }
 }
 </script>
 

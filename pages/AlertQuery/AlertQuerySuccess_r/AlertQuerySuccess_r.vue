@@ -19,7 +19,7 @@
       <!--搜索证件号-->
       <view class="search">
         <input style="width: 100%;" type="text" placeholder="请输入您的证件号码">
-        <img class="search-icon" src="@/static/midLevel/search.png">
+        <img class="search-icon" :src="getImgUrl('midLevel/search.png')">
       </view>
       <!--信息结果-->
       <view class="info" style="position: absolute;">
@@ -57,6 +57,9 @@ export default {
   methods: {
     tapBtn: function(args) {
       this.chooseLeftBtn = args.currentTarget.dataset.btn === 'left'
+    },
+    getImgUrl(url) {
+      return this.$resourceRoute(url)
     }
   }
 }
