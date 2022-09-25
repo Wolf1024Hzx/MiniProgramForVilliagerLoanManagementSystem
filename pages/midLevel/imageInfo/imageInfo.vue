@@ -1,8 +1,6 @@
 <template>
   <view>
-    <CustomerInformation>
-      <text slot="BusinessInformation" />
-    </CustomerInformation>
+    <CustomerInformation></CustomerInformation>
     <view class="main">
       <view class="navigate">
         <view class="classify">
@@ -57,7 +55,7 @@ export default {
       },
       {
         name: '结婚证',
-        url: 'https://i1.hdslb.com/bfs/face/aaf33dced1941af0946f37c62f4b48fcaba9c9a2.jpg@92w_92h.webp'
+        url: ''
       }
       ]
     }

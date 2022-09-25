@@ -5,7 +5,7 @@
 			<view class="card-head">贷款发放信息</view>
 			<view class="card-row">
 				<view class="key">融资/票面金额</view>
-				<view class="value">{{item.account}}元</view>
+				<view class="value-dight">{{item.account}}元</view>
 			</view>
 			<view class="card-row">
 				<view class="key">已还金额</view>
@@ -17,7 +17,7 @@
 			</view>
 			<view class="card-row">
 				<view class="key">融资/票面余额</view>
-				<view class="value">{{item.balance}}元</view>
+				<view class="value-dight">{{item.balance}}元</view>
 			</view>
 			<view class="card-row">
 				<view class="key">长期/短期</view>
@@ -25,7 +25,7 @@
 			</view>
 			<view class="card-row">
 				<view class="key">放款/开票日</view>
-				<view class="value-dight">{{item.loanBegin}}</view>
+				<view class="value">{{item.loanBegin}}</view>
 			</view>
 			<view class="card-row">
 				<view class="key">贷款/票据到期日</view>
@@ -33,7 +33,7 @@
 			</view>
 			<view class="card-row">
 				<view class="key">贷款账号</view>
-				<view class="value-dight">{{item.loanId}}元</view>
+				<view class="value">{{item.loanId}}</view>
 			</view>
 			<view @click="switchInfo" class="card-row" style="border: 0">
 				<view class="key">......</view>

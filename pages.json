@@ -80,6 +80,13 @@
 						"navigationBarTitleText": "",
 						"enablePullDownRefresh": false
 					}
+				},
+				{
+					"path": "imageInfo/imageInfo",
+					"style": {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false
+					}
 				}
                 ,{
                     "path" : "navigate/navigate",
