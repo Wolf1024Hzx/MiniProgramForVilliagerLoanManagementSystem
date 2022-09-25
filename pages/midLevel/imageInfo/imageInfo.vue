@@ -1,6 +1,6 @@
 <template>
   <view>
-    <CustomerInformation></CustomerInformation>
+    <customerInformation></customerInformation>
     <view class="main">
       <view class="navigate">
         <view class="classify">
@@ -35,10 +35,10 @@
 </template>
 
 <script>
-import CustomerInformation from '../CustomerInformation/CustomerInformation.vue'
+import customerInformation from '../components/customerInformation/customerInformation.vue'
 export default {
   components: {
-    CustomerInformation
+    customerInformation
   },
   data() {
     return {

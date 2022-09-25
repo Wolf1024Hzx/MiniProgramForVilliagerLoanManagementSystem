@@ -17,23 +17,18 @@
         </view>
       </view>
 			
-      <slot name="CustomerInformationSearch">
-        <CustomerInformationSearch />
+      <slot name="customerInformationSearch">
+        <customerInformationSearch />
       </slot>
-      <!-- <slot name="BusinessInformation">
-        <BusinessInformation />
-      </slot> -->
     </view>
   </view>
 </template>
 
 <script>
-import CustomerInformationSearch from './CustomerInformationSearch/CustomerInformationSearch.vue'
-// import BusinessInformation from './BusinessInformation/BusinessInformation.vue'
+import customerInformationSearch from './customerInformationSearch/customerInformationSearch.vue'
 export default {
   components: {
-    CustomerInformationSearch,
-    // BusinessInformation
+    customerInformationSearch
   },
   data() {
     return {

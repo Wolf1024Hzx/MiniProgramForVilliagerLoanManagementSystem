@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<CustomerInformation></CustomerInformation>
+		<customerInformation></customerInformation>
 		<scrolls :classifyStatus="classifyStatus" :classifyChoses="classifyChoses"></scrolls>
 		<view v-if="classifyStatus === 0">
 			<basicInfo></basicInfo>
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-	import CustomerInformation from '../CustomerInformation/CustomerInformation.vue'
+	import customerInformation from '../components/customerInformation/customerInformation.vue'
 	import guarantee from '../components/guarantee/guarantee.vue'
 	import guaranteeCircle from '../components/guaranteeCircle/guaranteeCircle.vue'
 	import choses from '../components/choses/choses.vue'
@@ -42,7 +42,7 @@
 			
 		},
 		components: {
-			CustomerInformation,
+			customerInformation,
 			guarantee,
 			guaranteeCircle,
 			choses,

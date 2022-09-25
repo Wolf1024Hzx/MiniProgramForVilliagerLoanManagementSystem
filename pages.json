@@ -54,27 +54,6 @@
 					}
 				},
 				{
-					"path": "CustomerInformation/CustomerInformation",
-					"style": {
-						"navigationBarTitleText": "",
-						"enablePullDownRefresh": false
-					}
-				},
-				{
-					"path": "CustomerInformation/CustomerInformationSearch/CustomerInformationSearch",
-					"style": {
-						"navigationBarTitleText": "",
-						"enablePullDownRefresh": false
-					}
-				},
-				{
-					"path": "CustomerInformation/BusinessInformation/BusinessInformation",
-					"style": {
-						"navigationBarTitleText": "",
-						"enablePullDownRefresh": false
-					}
-				},
-				{
 					"path": "innerIndex/innerIndex",
 					"style": {
 						"navigationBarTitleText": "",
@@ -88,10 +67,10 @@
 						"enablePullDownRefresh": false
 					}
 				}
-                ,{
+                ,
+				{
                     "path" : "navigate/navigate",
-                    "style" :                                                                                    
-                {
+                    "style" : {
                     "navigationBarTitleText": "",
                     "enablePullDownRefresh": false
                 }
