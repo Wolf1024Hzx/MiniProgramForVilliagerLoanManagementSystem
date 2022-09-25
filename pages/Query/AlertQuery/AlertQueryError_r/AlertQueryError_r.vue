@@ -1,8 +1,10 @@
 <template>
   <view>
+    <!--查询框-->
     <cu-custom :is-back="true" :background-height="300">
       <template slot="content">客户信息查询</template>
     </cu-custom>
+    <!--蒙版-->
     <view class="masking" />
     <view style="position: relative;z-index: 1;">
       <!-- 这里放两个按钮 -->
@@ -30,6 +32,7 @@
         <!-- 这里放其他组件 -->
       </template>
     </view>
+    <!--弹出框-->
     <view class="pop">
       <view class="info-pop">
         <image class="img-pop-1" :src="getImgUrl('alert/error.png')" />
@@ -61,7 +64,7 @@ export default {
       console.log('see you')
     },
     getImgUrl(url) {
-	  return this.$resourceRoute(url)
+      return this.$resourceRoute(url)
     }
   }
 }

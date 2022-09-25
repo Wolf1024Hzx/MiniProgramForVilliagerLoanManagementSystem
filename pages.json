@@ -6,7 +6,16 @@
 				"enablePullDownRefresh": false
 			}
 		}
-	],
+	    ,{
+            "path" : "pages/Query/EnterpriseCustomerQuery/EnterpriseCustomerQuery",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"subPackages": [
 		// 高层包
 		{
@@ -144,7 +153,7 @@
 		},
 		// 预警包
 		{
-			"root": "pages/AlertQuery",
+			"root": "pages/Query/AlertQuery",
 			"pages": [
 				{
 					"path": "AlertQueryError_r/AlertQueryError_r",
