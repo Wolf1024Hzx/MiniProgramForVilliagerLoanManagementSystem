@@ -1,107 +1,111 @@
 <template>
-  <view>
-    <cu-custom :is-back="false">
-      <block slot="content">村民贷系统</block>
-    </cu-custom>
-    <view class="main">
-      <view class="search">
-        <input style="width: 100%;" type="idcard" placeholder="请输入您的证件号码">
-        <img class="search-icon" src="@/static/midLevel/search.png">
-      </view>
-      <view class="navigate">
-        <view class="classify">
-          <view :class="classifyStatus === 0 ? 'classify-chose-active' : 'classify-chose'" @click="bindClassify(0)">管理类</view>
-          <view :class="classifyStatus === 1 ? 'classify-chose-active' : 'classify-chose'" @click="bindClassify(1)">要件类</view>
-        </view>
-        <view class="service">
-          <view :class="serviceStatus === 0 ? 'service-chose-active' : 'service-chose'" @click="bindService(0)">未结清业务</view>
-          <view :class="serviceStatus === 1 ? 'service-chose-active' : 'service-chose'" @click="bindService(1)">已结清业务</view>
-        </view>
-      </view>
-      <view class="image-info">
-        <view class="tip">选择下方所需图片</view>
-        <view class="card" @click="bindImage(0)">
-          <view class="card-name">身份证</view>
-          <view class="card-body" :class="imageStatus === 0 ? 'active-border' : ''">
-            <img class="card-img" :src="imageURL[0]">
-            <view v-if="imageStatus === 0">
-              <view class="left-top">身份证</view>
-              <view class="right-bottom" />
-              <img class="ok-icon" src="@/static/midLevel/imageInfo/hk_right.png">
-            </view>
-          </view>
-        </view>
-        <view class="card" @click="bindImage(1)">
-          <view class="card-name">户口本</view>
-          <view class="card-body" :class="imageStatus === 1 ? 'active-border' : ''">
-            <img class="card-img" :src="imageURL[1]">
-            <view v-if="imageStatus === 1">
-              <view class="left-top">户口本</view>
-              <view class="right-bottom" />
-              <img class="ok-icon" src="@/static/midLevel/imageInfo/hk_right.png">
-            </view>
-          </view>
-        </view>
-        <view class="card" @click="bindImage(2)">
-          <view class="card-name">结婚证</view>
-          <view class="card-body" :class="imageStatus === 2 ? 'active-border' : ''">
-            <img class="card-img" :src="imageURL[2]"></img>
-            <view v-if="imageStatus === 2">
-              <view class="left-top">结婚证</view>
-              <view class="right-bottom" />
-              <img class="ok-icon" src="@/static/midLevel/imageInfo/hk_right.png">
-            </view>
-          </view>
-        </view>
-      </view>
-    </view>
-  </view>
+	<view>
+		<CustomerInformation>
+			<text slot="BusinessInformation"></text>
+		</CustomerInformation>
+		<view class="main">
+			<view class="navigate">
+				<view class="classify">
+					<view @click="bindClassify(0)" :class="classifyStatus === 0 ? 'classify-chose-active' : 'classify-chose'">管理类</view>
+					<view @click="bindClassify(1)" :class="classifyStatus === 1 ? 'classify-chose-active' : 'classify-chose'">要件类</view>
+				</view>
+				<view class="service">
+					<view @click="bindService(0)" :class="serviceStatus === 0 ? 'service-chose-active' : 'service-chose'">未结清业务</view>
+					<view @click="bindService(1)" :class="serviceStatus === 1 ? 'service-chose-active' : 'service-chose'">已结清业务</view>
+				</view>
+			</view>
+			<view class="image-info">
+				<view class="tip">选择下方所需图片</view>
+				<view v-for="(item, index) in images" class="card" @click="bindImage(index)">
+					<view class="card-name">{{item.name}}</view>
+					<view class="card-body" :class="imageStatus === index ? 'active-border' : ''">
+						<img class="card-img" :src="item.url">
+						<view v-if="imageStatus === index">
+							<view class="left-top">{{item.name}}</view>
+							<view class="right-bottom"></view>
+							<img class="ok-icon" src="@/static/midLevel/imageInfo/hk_right.png">
+						</view>
+					</view>
+				</view>
+			</view>
+			<view class="hail">
+				<view class="btn-left">下载所有图片</view>
+				<view class="btn-right">下载已勾选</view>
+			</view>
+		</view>
+	</view>
 </template>
 
 <script>
+import CustomerInformation from '../CustomerInformation/CustomerInformation.vue'
 export default {
-  data() {
-    return {
-      classifyStatus: 0,
-      serviceStatus: 0,
-      imageStatus: -1,
-      imageURL: ['https://i1.hdslb.com/bfs/face/aaf33dced1941af0946f37c62f4b48fcaba9c9a2.jpg@92w_92h.webp',
-        'https://i1.hdslb.com/bfs/face/aaf33dced1941af0946f37c62f4b48fcaba9c9a2.jpg@92w_92h.webp',
-        'https://i1.hdslb.com/bfs/face/aaf33dced1941af0946f37c62f4b48fcaba9c9a2.jpg@92w_92h.webp']
-    }
-  },
-  methods: {
-    bindClassify(status) {
-      this.classifyStatus = status
-    },
-    bindService(status) {
-      this.serviceStatus = status
-    },
-    bindImage(status) {
-      this.imageStatus = status
-    }
-  }
+	data() {
+		return {
+			classifyStatus: 0,
+			serviceStatus: 0,
+			imageStatus: -1,
+			images: [{
+				name: "身份证",
+				url: ""
+			},
+			{
+				name: "户口本",
+				url: ""
+			},
+			{
+				name: "结婚证",
+				url: "https://i1.hdslb.com/bfs/face/aaf33dced1941af0946f37c62f4b48fcaba9c9a2.jpg@92w_92h.webp"
+			},
+			]
+		}
+	},
+	methods: {
+		bindClassify(status) {
+			this.classifyStatus = status
+		},
+		bindService(status) {
+			this.serviceStatus = status
+		},
+		bindImage(status) {
+			this.imageStatus = status
+		}
+	},
+	components: {
+		CustomerInformation
+	}
 }
 </script>
 
 <style scoped>
-.search {
-	width: 100%;
-	height: 96rpx;
+.hail {
+	margin: 60rpx 32rpx;
+	padding-bottom: 96rpx;
 	display: flex;
-	align-items: center;
 	justify-content: space-between;
-	padding: 0 32rpx;
-	background-color: #fff;
-	margin-bottom: 30rpx;
 }
-.search-icon {
-	height: 37rpx;
-	width: 36rpx;
-}	
+.btn-left {
+	width: 335rpx;
+	height: 70rpx;
+	background: #D4E0F9;
+	border-radius: 35rpx;
+	color: #4e8bff;
+	border: 2rpx solid #4e8bff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.btn-right {
+	width: 335rpx;
+	height: 70rpx;
+	background: #4e8bff;
+	border-radius: 35rpx;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 .main {
 	font-family: Source Han Sans CN;
-	padding-top: 24rpx;
 }
 .navigate {
 	width: 100%;
@@ -131,16 +135,14 @@ export default {
 	border-bottom: 3rpx solid #5484FD;
 }
 .service-chose {
-	width: 196rpx;
-	height: 57rpx;
+	padding: 14rpx 26rpx;
 	color: #a0a0a0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
 .service-chose-active {
-	width: 196rpx;
-	height: 57rpx;
+	padding: 14rpx 26rpx;
 	color: #FFFFFF;
 	background: #5484fd;
 	border-radius: 29rpx;
@@ -179,6 +181,7 @@ export default {
 	width: 595rpx;
 	height: 299rpx;
 	background: #eaeaea;
+	border: 4rpx solid #ffffff;
 	border-radius: 15rpx;
 	position: relative;
 }
