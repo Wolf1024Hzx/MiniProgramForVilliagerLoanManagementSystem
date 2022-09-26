@@ -1,10 +1,10 @@
 <template>
   <view>
-    <cu-custom :is-back="false">
+    <cu-custom :isBack="true">
       <block slot="content">村民贷系统</block>
     </cu-custom>
     <view class="main">
-      <view class="card">
+      <view class="card" @click="router(0)">
         <img class="img" :src="getImgUrl('midLevel/innerIndex/icon1.png')">
         <view class="mid">
           <view class="ch-Zn">客户信息</view>
@@ -12,7 +12,7 @@
         </view>
         <view class="arrow" />
       </view>
-      <view class="card">
+      <view class="card" @click="router(1)">
         <img class="img" :src="getImgUrl('midLevel/innerIndex/icon2.png')">
         <view class="mid">
           <view class="ch-Zn">影像信息</view>
@@ -20,7 +20,7 @@
         </view>
         <view class="arrow" />
       </view>
-      <view class="card">
+      <view class="card" @click="router(2)">
         <img class="img" :src="getImgUrl('midLevel/innerIndex/icon3.png')">
         <view class="mid">
           <view class="ch-Zn">集团客户</view>
@@ -28,7 +28,7 @@
         </view>
         <view class="arrow" />
       </view>
-      <view class="card">
+      <view class="card" @click="router(3)">
         <img class="img" :src="getImgUrl('midLevel/innerIndex/icon4.png')">
         <view class="mid">
           <view class="ch-Zn">预警查询</view>
@@ -45,7 +45,33 @@ export default {
   methods: {
     getImgUrl(url) {
       return this.$resourceRoute(url)
-    }
+    },
+	router(index) {
+		let url = './'
+		switch (index) {
+			case 0:
+				url = '../bussinessInfo/bussinessInfo'
+				break
+			case 1:
+				url = '../imageInfo/imageInfo'
+				break
+			case 2:
+				url = '../enterpriseCustomerQuery/enterpriseCustomerQuery'
+				break
+			case 3:
+				url = '../alertQuery/alertQuery'
+				break
+			default:
+				break
+		}
+		uni.navigateTo({
+		  url: url,
+		  animationType: 'pop-in',
+		  fail: (err) => {
+		    console.log(err)
+		  }
+		})
+	}
   }
 }
 </script>

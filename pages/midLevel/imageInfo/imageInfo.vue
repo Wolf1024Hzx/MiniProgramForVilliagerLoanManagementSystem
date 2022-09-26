@@ -1,20 +1,18 @@
 <template>
   <view>
-    <customerInformation></customerInformation>
+    <customerInformation :status="status" :choses="choses" :title="'影像信息'">
+	</customerInformation>
     <view class="main">
-      <view class="navigate">
-        <view class="classify">
-          <view :class="classifyStatus === 0 ? 'classify-chose-active' : 'classify-chose'" @click="bindClassify(0)">管理类</view>
-          <view :class="classifyStatus === 1 ? 'classify-chose-active' : 'classify-chose'" @click="bindClassify(1)">要件类</view>
-        </view>
-        <view class="service">
-          <view :class="serviceStatus === 0 ? 'service-chose-active' : 'service-chose'" @click="bindService(0)">未结清业务</view>
-          <view :class="serviceStatus === 1 ? 'service-chose-active' : 'service-chose'" @click="bindService(1)">已结清业务</view>
-        </view>
-      </view>
+		<view class="classify">
+			<view v-for="(item,index) in classifyChoses" :key="index" @click="bindClassify(index)"
+			:class="classifyStatus === index ? 'classify-chose-active' : 'classify-chose'">
+				{{item}}
+			</view>
+		</view>
+	  <choses :serviceStatus="serviceStatus" :serviceChoses="serviceChoses"></choses>
       <view class="image-info">
         <view class="tip">选择下方所需图片</view>
-        <view v-for="(item, index) in images" class="card" @click="bindImage(index)">
+        <view v-for="(item, index) in images" :key="index" class="card" @click="bindImage(index)">
           <view class="card-name">{{ item.name }}</view>
           <view class="card-body" :class="imageStatus === index ? 'active-border' : ''">
             <img class="card-img" :src="item.url">
@@ -35,15 +33,21 @@
 </template>
 
 <script>
-import customerInformation from '../components/customerInformation/customerInformation.vue'
+import customerInformation from '@/components/customerInformation/customerInformation.vue'
+import choses from '../components/choses/choses.vue'
 export default {
   components: {
-    customerInformation
+    customerInformation,
+	choses
   },
   data() {
     return {
-      classifyStatus: 0,
-      serviceStatus: 0,
+	  status: 0,
+	  choses: ['证件查询', '客户名称查询'],
+	  classifyStatus: 0,
+	  classifyChoses: ['管理类','要件类'],
+	  serviceStatus: 0,
+	  serviceChoses: ['未结清业务', '已结清业务'],
       imageStatus: -1,
       images: [{
         name: '身份证',
@@ -63,9 +67,6 @@ export default {
   methods: {
     bindClassify(status) {
       this.classifyStatus = status
-    },
-    bindService(status) {
-      this.serviceStatus = status
     },
     bindImage(status) {
       this.imageStatus = status
@@ -108,19 +109,14 @@ export default {
 .main {
 	font-family: Source Han Sans CN;
 }
-.navigate {
+.classify {
 	width: 100%;
-	height: 230rpx;
-	display: flex;
-	flex-direction: column;
-	padding: 0 32rpx;
-	background-color: #fff;
-}
-.classify, .service {
-	flex: 1;
+	height: 110rpx;
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
+	padding: 0 32rpx;
+	background-color: #fff;
 }
 .classify {
 	border-bottom: 1rpx solid #dddddd;
@@ -134,22 +130,6 @@ export default {
 	height: 45rpx;
 	color: #5484FD;
 	border-bottom: 3rpx solid #5484FD;
-}
-.service-chose {
-	padding: 14rpx 26rpx;
-	color: #a0a0a0;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-.service-chose-active {
-	padding: 14rpx 26rpx;
-	color: #FFFFFF;
-	background: #5484fd;
-	border-radius: 29rpx;
-	display: flex;
-	justify-content: center;
-	align-items: center;
 }
 .image-info {
 	width: 690rpx;

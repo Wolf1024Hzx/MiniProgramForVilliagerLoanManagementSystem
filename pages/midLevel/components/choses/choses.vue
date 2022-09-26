@@ -1,7 +1,8 @@
 <template>
 	<view class="navigate">
 		<view class="service">
-			<view v-for="(item, index) in serviceChoses" @click="bindService(index)" :class="serviceStatus === index ? 'service-chose-active' : 'service-chose'">{{item}}</view>
+			<view v-for="(item, index) in serviceChoses" :key="index" @click="bindService(index)" 
+			:class="serviceStatus === index ? 'service-chose-active' : 'service-chose'">{{item}}</view>
 		</view>
 	</view>
 </template>

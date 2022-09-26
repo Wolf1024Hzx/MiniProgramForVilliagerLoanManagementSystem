@@ -1,7 +1,8 @@
 <template>
 	<view class="navigate">
 		<scroll-view scroll-x="true" class="classify">
-			<view v-for="(item, index) in classifyChoses" @click="bindClassify(index)" :class="classifyStatus === index ? 'classify-chose-active' : 'classify-chose'">{{item}}</view>
+			<view v-for="(item, index) in classifyChoses" :key="index" @click="bindClassify(index)" 
+			:class="classifyStatus === index ? 'classify-chose-active' : 'classify-chose'">{{item}}</view>
 		</scroll-view>
 	</view>
 </template>

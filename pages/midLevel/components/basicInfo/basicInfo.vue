@@ -7,11 +7,11 @@
 			</view>
 			<view class="card-row">
 				<view class="key">客户名称</view>
-				<view class="value">{{item.name}}元</view>
+				<view class="value">{{item.name}}</view>
 			</view>
 			<view class="card-row">
 				<view class="key">身份证号码</view>
-				<view class="value">{{item.idCard}}元</view>
+				<view class="value">{{item.idCard}}</view>
 			</view>
 			<view class="card-row">
 				<view class="key">性别</view>
@@ -31,29 +31,30 @@
 			</view>
 			<view class="card-row">
 				<view class="key">行政区</view>
-				<view class="value">{{item.p1}}元</view>
+				<view class="value">{{item.p1}}</view>
 			</view>
 			<view class="card-row">
 				<view class="key">街道办</view>
-				<view class="value">{{item.p2}}元</view>
+				<view class="value">{{item.p2}}</view>
 			</view>
 			<view class="card-row">
 				<view class="key">行政村</view>
-				<view class="value">{{item.p3}}元</view>
+				<view class="value">{{item.p3}}</view>
 			</view>
 			<view class="card-row">
 				<view class="key">自然村</view>
-				<view class="value">{{item.p4}}元</view>
+				<view class="value">{{item.p4}}</view>
 			</view>
 			<view class="card-row">
 				<view class="key">婚姻状况</view>
-				<view class="value">{{item.marry}}元</view>
+				<view class="value">{{item.marry}}</view>
 			</view>
 			<view class="card-row">
 				<view class="key">所属网点</view>
-				<view class="value">{{item.subbranch}}元</view>
+				<view class="value">{{item.subbranch}}</view>
 			</view>
 		</view>
+		<view class="btn">下载</view>
 	</view>
 </template>
 
@@ -116,5 +117,16 @@
 	font-size: 28rpx;
 	font-weight: 700;
 	color: #2d2f31;
+}
+.btn {
+	width: 690rpx;
+	height: 70rpx;
+	background: #4e8bff;
+	border-radius: 35rpx;
+	color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 48rpx auto 0;
 }
 </style>

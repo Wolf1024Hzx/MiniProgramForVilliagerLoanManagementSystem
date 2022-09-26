@@ -1,6 +1,6 @@
 <template>
 	<view class="main">
-		<view v-for="(item, index) in userInfos" class="card">
+		<view v-for="(item, index) in userInfos" :key="index" class="card">
 			<view class="card-head">
 				<view class="block"></view>
 				<view class="username">被担保人：{{item.username}}</view>

@@ -41,12 +41,7 @@
 		// 中层包
 		{
 			"root": "pages/midLevel",
-			"pages": [{
-					"path": "FinancialAssistant/index",
-					"style": {
-						"navigationBarTitleText": "村民贷系统"
-					}
-				},
+			"pages": [
 				{
 					"path": "index",
 					"style": {
@@ -66,15 +61,27 @@
 						"navigationBarTitleText": "",
 						"enablePullDownRefresh": false
 					}
-				}
-                ,
+				},
 				{
-                    "path" : "navigate/navigate",
+                    "path" : "bussinessInfo/bussinessInfo",
                     "style" : {
                     "navigationBarTitleText": "",
                     "enablePullDownRefresh": false
-                }
-                
+					}
+                },
+				{
+                    "path" : "alertQuery/alertQuery",
+                    "style" : {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+					}
+				},
+				{
+				    "path" : "enterpriseCustomerQuery/enterpriseCustomerQuery",
+				    "style" : {
+				    "navigationBarTitleText": "",
+				    "enablePullDownRefresh": false
+					}
                 }
             ]
 		},
@@ -110,33 +117,12 @@
 					"style": {
 						"navigationBarTitleText": "村民贷系统"
 					}
-				}
-			]
-		},
-		// Query包
-		{
-			"root": "pages/Query/",
-			"pages": [{
-					"path": "AlertQuery/AlertQueryError_r/AlertQueryError_r",
-					"style": {
-						"navigationBarTitleText": "",
-						"enablePullDownRefresh": false
-					}
 				},
 				{
-					"path": "AlertQuery/AlertQuerySuccess_r/AlertQuerySuccess_r",
+					"path": "financialAssistant/financialAssistant",
 					"style": {
-						"navigationBarTitleText": "",
-						"enablePullDownRefresh": false
+						"navigationBarTitleText": "村民贷系统"
 					}
-				},
-				{
-					"path": "EnterpriseCustomerQuery/EnterpriseCustomerQuery",
-					"style": {
-						"navigationBarTitleText": "",
-						"enablePullDownRefresh": false
-					}
-
 				}
 			]
 		}

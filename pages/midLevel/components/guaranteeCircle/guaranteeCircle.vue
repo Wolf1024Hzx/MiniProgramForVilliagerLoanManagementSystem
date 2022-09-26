@@ -1,7 +1,7 @@
 <template>
 	<view class="main">
 		<view class="info">
-			<view v-for="(item, index) in guarateeInfos" class="card">
+			<view v-for="(item, index) in guarateeInfos" :key="index" class="card">
 				<view class="card-head">{{item.type}}</view>
 				<view class="card-body">
 					<view class="card-body-row">

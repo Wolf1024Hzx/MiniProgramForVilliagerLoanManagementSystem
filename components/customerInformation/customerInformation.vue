@@ -1,21 +1,17 @@
 <template>
   <view>
     <cu-custom :is-back="true" :background-height="300">
-      <template slot="content">客户信息查询</template>
+      <template slot="content">{{title}}</template>
     </cu-custom>
 
     <view style="position: relative;z-index: 1;">
       <!-- 这里放两个按钮 -->
       <view style="display: flex;margin-top: 60rpx;margin-bottom: 20rpx;">
-        <view class="btn" data-btn="left" @tap="tapBtn">
-          证件查询
-          <view v-if="chooseLeftBtn" class="line_under_btn" />
+        <view v-for="(item, index) in choses" :key="index" class="btn" :data-status="index" @tap="tapBtn">
+          {{item}}
+          <view v-if="status === index" class="line_under_btn" />
         </view>
-        <view class="btn" data-btn="right" @tap="tapBtn">
-          客户名称查询
-          <view v-if="!chooseLeftBtn" class="line_under_btn" />
-        </view>
-      </view>
+      </view> 
 			
       <slot name="customerInformationSearch">
         <customerInformationSearch />
@@ -30,14 +26,15 @@ export default {
   components: {
     customerInformationSearch
   },
+  props: ['status', 'choses', 'title'],
   data() {
     return {
-      chooseLeftBtn: true
+      
     }
   },
   methods: {
     tapBtn: function(args) {
-      this.chooseLeftBtn = args.currentTarget.dataset.btn === 'left'
+      this.$parent.status = args.currentTarget.dataset.status
     }
   }
 }

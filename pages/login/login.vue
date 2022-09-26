@@ -63,33 +63,6 @@ export default {
             }
           })
           break
-        case '3':
-          uni.navigateTo({
-            url: '/pages/midLevel/navigate/navigate',
-            animationType: 'pop-in',
-            fail: (err) => {
-              console.log(err)
-            }
-          })
-          break
-        case '4':
-          uni.navigateTo({
-            url: '/pages/midLevel/imageInfo/imageInfo',
-            animationType: 'pop-in',
-            fail: (err) => {
-              console.log(err)
-            }
-          })
-          break
-        case '5':
-          uni.navigateTo({
-            url: '/pages/midLevel/innerIndex/innerIndex',
-            animationType: 'pop-in',
-            fail: (err) => {
-              console.log(err)
-            }
-          })
-          break
         default:
           break
       }
