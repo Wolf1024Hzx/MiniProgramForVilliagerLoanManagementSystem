@@ -6,37 +6,47 @@
 				"enablePullDownRefresh": false
 			}
 		}
-	],
+    ],
 	"subPackages": [
 		// 高层包
 		{
 			"root": "pages/highLevel/",
-			"pages": [{
-					"path": "overview/overview_1/overview_1",
+			"pages": [
+				{
+					"path": "index",
 					"style": {
 						"enablePullDownRefresh": false
 					}
 				},
 				{
-					"path": "overview/overview_2/overview_2",
+					"path": "overview/overview",
 					"style": {
 						"enablePullDownRefresh": false
 					}
 				},
 				{
-					"path": "rank/rank_index/rank_index",
+					"path": "rank/rank",
 					"style": {
 						"enablePullDownRefresh": false
 					}
 				},
 				{
-					"path": "rank/rank_detail/rank_detail",
+					"path": "rankMore/rankMore",
 					"style": {
-						"navigationBarTitleText": "",
-						"enablePullDownRefresh": false
+						"enablePullDownRefresh": false,
+						"onReachBottomDistance": 0
 					}
 				}
-			]
+			    ,{
+                    "path" : "administrative/administrative",
+                    "style" : {
+						"navigationBarTitleText": "",
+						"enablePullDownRefresh": false,
+						"onReachBottomDistance": 0
+					}
+                
+                }
+            ]
 		},
 		// 中层包
 		{

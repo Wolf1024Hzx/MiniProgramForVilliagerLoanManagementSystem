@@ -19,6 +19,9 @@ app.$mount()
 // 引入cu-custom组件
 import cuCustom from './colorui/components/cu-custom.vue'
 Vue.component('CuCustom', cuCustom)
+// 引入customerInformationSearch组件
+import customerInformation from './components/customerInformation/customerInformation'
+Vue.component('customerInformation', customerInformation)
 // #endif
 
 // #ifdef VUE3

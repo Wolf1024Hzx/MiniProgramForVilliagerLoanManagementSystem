@@ -5,9 +5,9 @@
 				<template v-slot:customerInformationSearch />
 			</customerInformation>
 			<view class="entry">
-				<view class="input">
+				<view class="input-idcard">
 					<text>证件号码</text>
-					<view class="input-idcard">
+					<view class="input">
 						<input type="idcard" style="width: 100%;" placeholder="请输入您的证件号码"/>
 					</view>
 				</view>
@@ -51,7 +51,7 @@
 				status: 0,
 				choses: ['证件查询', '客户名称查询'],
 				classifyStatus: 0,
-				classifyChoses: ['基本信息1','基本信息2','业务信息','额度依据','关联业务','对外担保','担保圈'],
+				classifyChoses: ['基本信息1','基本信息2','业务信息','额度依据','关联业务','对外担保','担保圈','附加信息'],
 				serviceStatus: 0,
 				serviceChoses: ['概况', '正在担保', '结束担保'],
 				isEntry: true
@@ -85,12 +85,12 @@
 	flex-direction: column;
 	justify-content: space-between;
 }
-.input {
+.input-idcard {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 }
-.input-idcard {
+.input {
 	width: 467rpx;
 	height: 75rpx;
 	background: #ffffff;

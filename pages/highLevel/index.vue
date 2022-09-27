@@ -193,7 +193,7 @@ export default {
     },
     nav() {
       uni.navigateTo({
-        url: '/pages/highLevel/overview/overview_2/overview_2',
+        url: './overview/overview',
         animationType: 'slide-in-right'
       })
     }

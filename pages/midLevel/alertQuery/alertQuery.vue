@@ -5,9 +5,9 @@
 				<template v-slot:customerInformationSearch />
 			</customerInformation>
 			<view class="entry">
-				<view class="input">
+				<view class="input-idcard">
 					<text>证件号码</text>
-					<view class="input-idcard">
+					<view class="input">
 						<input v-model="cin" type="idcard" style="width: 100%;" placeholder="请输入您的证件号码"/>
 					</view>
 				</view>
@@ -34,7 +34,7 @@
 		<uni-popup ref="popup" type="center">
 			<view class="popup-card">
 				<view class="popup-text">
-					<image class="error-icon" :src="getImgUrl('alert/error.png')" />
+					<image class="error-icon" :src="getImgUrl('midLevel/error.png')" />
 					<text>该用户不在预警名单内</text>
 				</view>
 				<view class="btn" style="width: 483rpx;" @click="close">知道了</view>
@@ -146,12 +146,12 @@
 		flex-direction: column;
 		justify-content: space-between;
 	}
-	.input {
+	.input-idcard {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
-	.input-idcard {
+	.input {
 		width: 467rpx;
 		height: 75rpx;
 		background: #ffffff;
