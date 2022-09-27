@@ -1,135 +1,117 @@
 <template>
-	<view class="subbranch-worker_page">
-		<HeaderBg></HeaderBg>
-		<view class="func">
-			<view class="func-item row" v-for="item in funcList" :key="item" :style="{'background-color':item.color}" @click="goFuncDeatilPage(item)">
-				<view class="func-name col-middle">
-					<view class="cn">{{item.cn}}</view>
-					<view class="en">{{item.en}}</view>
-				</view>
-
-				<view class="func-image flex-1">
-					<image :src="item.bgImg" mode=""></image>
-					<image class="z-index1" :src="item.logo" mode=""></image>
-				</view>
-			</view>
-		</view>
-	</view>
+  <view style="background-color: #FBFCFD;height: 1600rpx;">
+    <!--标题-->
+    <cu-custom>
+      <template slot="content">村民贷系统</template>
+    </cu-custom>
+    <!--卡片信息-->
+    <view style="margin-top: 10%;">
+      <view v-for="(item,index) in cardInfos" class="cards">
+        <view class="card" :style="item.bgc">
+          <image class="card-img" :src="getImgUrl(item.cardImg)" />
+          <view class="card-info">
+            <view class="card-info-cn">{{ item.cardNameCn }}</view>
+            <view class="card-info-eg">{{ item.cardNameEg }}</view>
+          </view>
+          <view class="arrow" />
+        </view>
+      </view>
+    </view>
+  </view>
 </template>
 
-<script setup>
-	import HeaderBg from '@/components/HeaderBg.vue'
-	export default {
-		components: {
-			HeaderBg
-		},
-		data() {
-			return {
-				funcList: [{
-						id: 1,
-						cn: '我的管户',
-						en: 'My Account',
-						color: '#EAF6FE',
-						bgImg: '@/static/subbranchWorker/Account-bg@3x.png',
-						logo: '@/static/subbranchWorker/Account@3x.png'
-					},
-					{
-						id: 2,
-						cn: '客户信息',
-						en: 'Customer Information',
-						color: '#FAEFEA',
-						bgImg: '@/static/subbranchWorker/info-bg@3x.png',
-						logo: '@/static/subbranchWorker/info@3x.png'
-					},
-					{
-						id: 3,
-						cn: '影像信息',
-						en: 'Image Information',
-						color: '#E0E5F7',
-						bgImg: '@/static/subbranchWorker/image-bg@3x.png',
-						logo: '@/static/subbranchWorker/image@3x.png'
-					},
-					{
-						id: 4,
-						cn: '金融助手',
-						en: 'Financial Assistant',
-						color: '#F7E0E2',
-						bgImg: '@/static/subbranchWorker/cal-bg@3x.png',
-						logo: '@/static/subbranchWorker/cal@3x.png'
-					}
-				]
-			}
-		},
-		methods: {
-			goFuncDeatilPage: function (item) {
-				if(item.id === 1) {
-					uni.navigateTo({
-						url: '../MyAccount/index'
-					})
-				}else if(item.id === 4){
-					uni.navigateTo({
-						url: '../FinancialAssistant/index'
-					})
-				}
-			}
-		}
-	}
+<script>
+export default {
+  data() {
+    return {
+      cardInfos: [{
+        cardImg: 'subbranchWorker/img1.png',
+        cardNameCn: '我的管户',
+        cardNameEg: 'My Account',
+        bgc: 'background: linear-gradient(-60deg,#31B3DB,#308CDA);'
+      },
+	  {
+	    cardImg: 'subbranchWorker/img2.png',
+	    cardNameCn: '客户信息',
+	    cardNameEg: 'Customer Information',
+        bgc: 'background: linear-gradient(-60deg,#678EFC,#3576FD);'
+	  },
+	  {
+	    cardImg: 'subbranchWorker/img3.png',
+	    cardNameCn: '影像信息',
+	    cardNameEg: 'Image Information',
+        bgc: 'background: linear-gradient(-60deg,#F89186,#FD6362);'
+	  },
+	  {
+	    cardImg: 'subbranchWorker/img4.png',
+	    cardNameCn: '金融助手',
+	    cardNameEg: 'Financial Assistant',
+        bgc: 'background: linear-gradient(-60deg,#31B3DB,#308CDA);'
+	  },
+	  {
+	    cardImg: 'subbranchWorker/img5.png',
+	    cardNameCn: '潜力客户',
+	    cardNameEg: 'Potential Customers',
+        bgc: 'background: linear-gradient(-60deg,#678EFC,#3576FD);'
+	  },
+	  {
+	    cardImg: 'subbranchWorker/img6.png',
+	    cardNameCn: '华山论剑',
+	    cardNameEg: 'Competition On Huashan Mountain',
+        bgc: 'background: linear-gradient(-60deg,#F89186,#FD6362);'
+	  }]
+    }
+  },
+  methods: {
+    getImgUrl(url) {
+      return this.$resourceRoute(url)
+    }
+  }
+}
 </script>
 
-<style>
-	@import '@/style/index.css';
-
-	.func {
-		padding: 114.5px 15px 12px;
-	}
-
-	.func-item {
-		height: 120.5px;
-		background: #eaf6fe;
-		border-radius: 2px;
-		margin-bottom: 28px;
-		box-shadow: -5px 0px 9.6px 0.2px rgba(0, 0, 0, 0.10);
-	}
-
-	.func-name {
-		width: 50%;
+<style lang="less" scoped>
+.cards{
+	width: 100%;
+	height: 150rpx;
+	margin-top: 20rpx;
+	display: flex;
+	background-color: #FBFCFD;
+	color: white;
+	font-family: Source Han Sans CN;
+	justify-content: center;
+	.card{
+		display: flex;
+		align-items: center;
+		width: 90%;
 		height: 100%;
-		justify-content: center;
+		border-radius: 10rpx;
+		.card-img{
+			margin-left: 4%;
+			width: 90rpx;
+			height: 90rpx;
+		}
+		.card-info{
+			margin-left: 3%;
+			display: flex;
+			flex-direction: column;
+			.card-info-cn{
+				font-size: 28rpx;
+			}
+			.card-info-eg{
+				font-size: 24rpx;
+			}
+		}
+		.arrow{
+			position: absolute;
+			width: 20rpx;
+			height: 20rpx;
+			border: 2rpx solid white;
+			border-left-width: 0;
+			border-bottom-width: 0;
+			transform: matrix(0.71,0.71,-0.71,0.71,0,0);
+			right: 100rpx;
+		}
 	}
-
-	.func-name .cn {
-		font-size: 16px;
-		font-family: Source Han Sans CN, Source Han Sans CN-Bold;
-		font-weight: 700;
-		color: #2d2f31;
-	}
-
-	.func-name .en {
-		opacity: 0.75;
-		font-size: 12px;
-		font-family: Source Han Sans CN, Source Han Sans CN-Regular;
-		font-weight: 400;
-		color: #2d2f31;
-	}
-
-	.func-image {
-		width: 50%;
-		height: 100%;
-		position: relative;
-
-	}
-
-	.func-image image {
-		width: 100%;
-		height: 100%;
-	}
-
-	.func-image .z-index1 {
-		position: absolute;
-		left: 30%;
-		top: 28%;
-		z-index: 1;
-		width: 68.5px;
-		height: 54.5px;
-	}
+}
 </style>
