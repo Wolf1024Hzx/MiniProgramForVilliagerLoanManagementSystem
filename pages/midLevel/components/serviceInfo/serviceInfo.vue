@@ -1,8 +1,14 @@
 <template>
 	<view class="main">
 		<choses :serviceStatus="serviceStatus" :serviceChoses="serviceChoses"></choses>
-		<view v-if="!isMore && serviceStatus === 0" class="card">
-			<view class="card-head">贷款发放信息</view>
+		<view v-if="!isMore && !isSub" class="card">
+			<view class="card-head" style="position: relative;">
+				<view @click="switchSub" class="arrow-position">
+					<view class="arrow"></view>
+					<text class="more-left">概括</text>
+				</view>
+				贷款发放信息
+			</view>
 			<view class="card-row">
 				<view class="key">融资/票面金额</view>
 				<view class="value-dight">{{item.account}}元</view>
@@ -39,13 +45,13 @@
 				<view class="key">......</view>
 			</view>
 		</view>
-		<view v-else-if="isMore && serviceStatus === 0" class="card">
+		<view v-else-if="isMore && !isSub" class="card">
 			<view class="card-head-more">
-				<view @click="switchInfo" class=".more-left">
+				<view @click="switchInfo" class="more-left">
 					<view class="arrow"></view>
 					<text>上一页</text>
 				</view>
-				<view class=".more-right">贷款发放信息</view>
+				<view class="more-right">贷款发放信息</view>
 			</view>
 			<view class="card-row">
 				<view class="key">授信截止日期</view>
@@ -65,11 +71,11 @@
 			</view>
 			<view class="card-row">
 				<view class="key">贷款余额</view>
-				<view class="value-dight">{{item.Hbalance}}</view>
+				<view class="value-dight">{{item.Hbalance}}元</view>
 			</view>
 			<view class="card-row">
 				<view class="key">贷款起始日期</view>
-				<view class="value-dight">{{item.HloanBegin}}</view>
+				<view class="value">{{item.HloanBegin}}</view>
 			</view>
 			<view class="card-row">
 				<view class="key">贷款到期日期</view>
@@ -81,17 +87,17 @@
 			</view>
 		</view>
 		<view v-else>
-			<view class="card-sub" v-for="(item, index) in subInfos">
-				<view class="card-head-sub">
+			<view class="card-sub" v-for="(item, index) in subInfos" :key="index">
+				<view class="card-head-sub" @click="switchSub">
 					<view class="block"></view>
 					<view class="name-sub">{{item.type}}</view>
 					<view class="more-sub">查看明细</view>
 				</view>
-				<view class="card-row">
+				<view class="card-row" @click="switchSub">
 					<view class="key">合同编号</view>
 					<view class="value">{{item.id}}</view>
 				</view>
-				<view class="card-row">
+				<view class="card-row" @click="switchSub">
 					<view class="key">合同金额(元)</view>
 					<view class="value">{{item.account}}</view>
 				</view>
@@ -127,6 +133,7 @@
 					HdeadLine: '1年'
 				},
 				isMore: false,
+				isSub: true,
 				subInfos: [{
 					type: '社区贷',
 					id: '30000',
@@ -146,7 +153,10 @@
 		},
 		methods: {
 			switchInfo() {
-				this.isMore = !this.isMore;
+				this.isMore = !this.isMore
+			},
+			switchSub() {
+				this.isSub = !this.isSub
 			}
 		},
 		components: {
@@ -235,6 +245,12 @@
 	border-right-width: 0;
 	transform: matrix(0.71,0.71,-0.71,0.71,0,0);
 	margin-right: 4rpx;
+}
+.arrow-position {
+	position: absolute; 
+	left: 0; 
+	top: 50%; 
+	transform: translateY(-50%);
 }
 .more-right {
 	width: 205rpx;
