@@ -133,6 +133,15 @@
                 }
                 
                 }
+                ,{
+                    "path" : "PotentialCustomers/PotentialCustomers",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
             ]
 		}
 	],
