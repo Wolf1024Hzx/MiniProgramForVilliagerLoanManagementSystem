@@ -124,7 +124,16 @@
 						"navigationBarTitleText": "村民贷系统"
 					}
 				}
-			]
+			    ,{
+                    "path" : "OverduePayment/OverduePayment",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+            ]
 		}
 	],
 	"globalStyle": {
