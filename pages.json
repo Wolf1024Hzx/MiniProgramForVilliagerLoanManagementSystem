@@ -152,6 +152,15 @@
                 }
                 
                 }
+                ,{
+                    "path" : "ManagementDetails/ManagementDetails",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
             ]
 		}
 	],
