@@ -170,6 +170,24 @@
                 }
                 
                 }
+                ,{
+                    "path" : "PotentialCustomers/PotentialCustomers",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
+                ,{
+                    "path" : "ManagementDetails/ManagementDetails",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
             ]
 		}
 	],
