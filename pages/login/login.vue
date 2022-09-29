@@ -47,7 +47,7 @@ export default {
       switch (this.account) {
         case '1':
           uni.navigateTo({
-            url: '/pages/highLevel/overview/overview_1/overview_1',
+            url: '/pages/highLevel/index',
             animationType: 'pop-in',
             fail: (err) => {
               console.log(err)

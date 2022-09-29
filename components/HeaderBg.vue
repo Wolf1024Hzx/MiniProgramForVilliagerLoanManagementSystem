@@ -2,7 +2,7 @@
 	<view class="header-bg">
 		<view class="title">{{pageTitle}}</view>
 		<view class="back-arrow" v-show="isSecondPage" @click="goBack()">
-			<image src="@/static/components/back-arrow.png" alt="">
+			<!-- <image src="@/static/components/back-arrow.png" alt=""> -->
 		</view>
 	</view>
 </template>
