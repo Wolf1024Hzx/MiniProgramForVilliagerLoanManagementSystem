@@ -179,6 +179,15 @@
                 }
                 
                 }
+                ,{
+                    "path" : "ManagementDetailsPop/ManagementDetailsPop",
+                    "style" :                                                                                    
+                {
+                    "navigationBarTitleText": "",
+                    "enablePullDownRefresh": false
+                }
+                
+                }
             ]
 		}
 	],
