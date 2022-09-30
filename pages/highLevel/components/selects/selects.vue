@@ -73,7 +73,7 @@
 				this.intervalIndex = e.detail.value
 			},
 			tapButton() {
-				this.getData()
+				this.getData.apply(this.$parent)				
 			}
 		}
 	}

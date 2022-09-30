@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<selects :getData="getData" :isBack="true"></selects>
-		<view class="overdue" v-show="selected && overdueSelected">
+		<view class="overdue">
 			<view class="overdue-header">
 				<view class="loan-balance">
 					<view class="overdue-key">贷款余额合计(总计)</view>
@@ -79,6 +79,9 @@
 		methods: {
 			getData() {
 				console.log('data')
+			},
+			getMoreOverdue() {
+				this.overdueMore = true
 			}
 		}
 	}

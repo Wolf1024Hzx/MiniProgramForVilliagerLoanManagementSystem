@@ -47,15 +47,6 @@
                 
                 }
                 ,{
-                    "path" : "analysisCharts/analysisCharts",
-                    "style" :                                                                                    
-                {
-                    "navigationBarTitleText": "",
-                    "enablePullDownRefresh": false
-                }
-                
-                }
-                ,{
                     "path" : "overdue/overdue",
                     "style" :                                                                                    
                 {

@@ -1,6 +1,6 @@
 <template>
   <view>
-    <cu-custom :is-back="true" :background-height="300">
+    <cu-custom :is-back="isBack" :background-height="300">
       <template slot="content">{{title}}</template>
     </cu-custom>
 
@@ -26,7 +26,21 @@ export default {
   components: {
     customerInformationSearch
   },
-  props: ['status', 'choses', 'title'],
+  props: {
+		status: {
+			type: Number
+		},
+		choses: {
+			type: Array
+		},
+		title: {
+			type: String
+		}, 
+		isBack: {
+			type: Boolean,
+			default: true
+		}
+	},
   data() {
     return {
       

@@ -34,7 +34,7 @@ export default {
 		let url = './'
 		switch (index) {
 			case 0:
-				url = '/pages/highLevel/overview/overview_1/overview_1'
+				url = '/pages/highLevel/index'
 				break
 			case 1:
 				url = './innerIndex/innerIndex'

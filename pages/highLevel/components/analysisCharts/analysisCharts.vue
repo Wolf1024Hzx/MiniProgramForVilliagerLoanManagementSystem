@@ -1,6 +1,5 @@
 <template>
-	<view style="padding-bottom: 72rpx;">
-		<selects :getData="getData" :isBack="true"></selects>
+	<view>
 		<!-- <qiun-title-bar title="基本折线区域图" /> -->
 		<view class="charts-box">
 			<qiun-data-charts type="area" :opts="optsErea" :chartData="ereaDatas" />
@@ -12,11 +11,7 @@
 </template>
 
 <script>
-	import selects from '../components/selects/selects'
 	export default {
-		components: {
-			selects
-		},
 		data() {
 			return {
 				optsErea: {

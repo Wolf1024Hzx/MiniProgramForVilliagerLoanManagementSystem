@@ -1,6 +1,6 @@
 <template>
 	<view>
-		<customerInformation :status="status" :choses="choses" :title="'客户信息查询'">
+		<customerInformation :status="status" :choses="choses" :title="'客户信息查询'" :isBack="false">
 			<template v-slot:customerInformationSearch />
 		</customerInformation>
 		<view class="card">
@@ -13,6 +13,7 @@
 				<qiun-data-charts type="ring" :opts="optsRing" :chartData="ringDatas" />
 			</view>
 		</view>
+		
 	</view>
 </template>
 
@@ -27,9 +28,21 @@
 					legend: {
 						show: false
 					},
+					title: {
+						name: ''
+					},
+					subtitle: {
+						name: ''
+					},
 					extra: {
+						tooltip: {
+							bgColor: '#dddddd',
+							fontColor: '#000000',
+							showArrow: false
+						},
 						ring: {
-							ringWidth: 20
+							ringWidth: 25,
+							labelWidth: 30
 						}
 					}
 				},
@@ -37,26 +50,31 @@
 					series: [{
 						data: [{
 							name: '罗湖区',
-							value: 15
+							value: 15,
+							labelText: '罗湖区:15%'
 						}, {
 							name: '福田区',
-							value: 5
+							value: 5,
+							labelText: '福田区:5%'
 						}, {
 							name: '龙华区',
-							value: 20
+							value: 20,
+							labelText: '龙华区:20%'
 						}, {
 							name: '龙岗区',
-							value: 35
+							value: 35,
+							labelText: '龙岗区:35%'
 						}, {
 							name: '南山区',
-							value: 25
+							value: 25,
+							labelText: '南山区:25%'
 						}]
 					}]
 				}
 			}
 		},
 		methods: {
-
+			
 		}
 	}
 </script>
@@ -68,13 +86,13 @@
 		border: 1rpx solid #e9e9e9;
 		border-radius: 10rpx;
 		margin: 72rpx auto 0;
-		position: relative;
-		padding: 0 32rpx 32rpx;
+		padding-bottom: 32rpx;
 	}
 
 	.card-head {
+		position: relative;
+		margin: 0 32rpx;
 		height: 108rpx;
-		width: 100%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
@@ -83,7 +101,7 @@
 
 	.block {
 		position: absolute;
-		left: 0;
+		left: -32rpx;
 		top: 40rpx;
 		width: 9rpx;
 		height: 30rpx;
@@ -103,10 +121,17 @@
 		color: #2d2f31;
 	}
 
-	.charts-box {
+	.fill-box {
 		width: 100%;
 		height: 432rpx;
 		background: #ffffff;
 		border-radius: 10rpx;
+	}
+	
+	.chart-box {
+		width: 100%;
+		height: 432rpx;
+		background: #ffffff;
+		border-radius: 10rpx;width: 100%;
 	}
 </style>
