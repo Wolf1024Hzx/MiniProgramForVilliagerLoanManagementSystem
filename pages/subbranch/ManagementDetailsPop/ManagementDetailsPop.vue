@@ -1,11 +1,13 @@
 <template>
   <view style="font-family: Source Han Sans CN;">
+    <!--蒙版-->
+    <view class="basic" />
     <!--标题-->
     <cu-custom is-back="true">
       <template slot="content">业务概况明细</template>
     </cu-custom>
     <!--筛选框-->
-    <view class="search">
+    <view class="search" style="z-index: 5;">
       <view class="search-info">筛选</view>
       <image class="search-img" :src="getImgUrl('subbranchWorker/filter.png')" />
     </view>
@@ -82,6 +84,19 @@
         </view>
       </view>
     </view>
+    <!--筛选内容-->
+    <view class="filter">
+      <view class="options">
+        <view :class="classify1Status==='false'?'option1':'option1Active'" @click="bindClassify(1)">按贷款起始日期排序</view>
+        <view :class="classify2Status==='false'?'option2':'option2Active'" @click="bindClassify(2)">按贷款到期日期排序</view>
+        <view :class="classify3Status==='false'?'option3':'option3Active'" @click="bindClassify(3)">按合同余额排序</view>
+        <view :class="classify4Status==='false'?'option4':'option4Active'" @click="bindClassify(4)">按贷款余额排序</view>
+      </view>
+      <view class="buttons">
+        <view class="reset">重置</view>
+        <view class="define">确定</view>
+      </view>
+    </view>
   </view>
 </template>
 
@@ -89,6 +104,10 @@
 export default {
   data() {
     return {
+	  classify1Status: 'false',
+	  classify2Status: 'false',
+	  classify3Status: 'false',
+	  classify4Status: 'false',
       cardInfos: [{
         no: '01',
         BusinessType: '/',
@@ -137,14 +156,54 @@ export default {
       return num.toString().replace(/\d+/, function(n) {
         return n.replace(/(\d)(?=(?:\d{3})+$)/g, '$1,')
       })
+    },
+    bindClassify(num) {
+      if (num === 1) {
+        if (this.classify1Status === 'true') {
+          this.classify1Status = 'false'
+        } else {
+          this.classify1Status = 'true'
+        }
+      }
+      if (num === 2) {
+        if (this.classify2Status === 'true') {
+          this.classify2Status = 'false'
+        } else {
+          this.classify2Status = 'true'
+        }
+      }
+      if (num === 3) {
+        if (this.classify3Status === 'true') {
+          this.classify3Status = 'false'
+        } else {
+          this.classify3Status = 'true'
+        }
+      }
+      if (num === 4) {
+        if (this.classify4Status === 'true') {
+          this.classify4Status = 'false'
+        } else {
+          this.classify4Status = 'true'
+        }
+      }
     }
   }
 }
 </script>
 
 <style lang="less" scoped>
+.basic{
+	position: absolute;
+	width: 100%;
+	height: 4000rpx;
+	background-color: black;
+	z-index: 2;
+	opacity: 0.4;
+	margin-top: 25%;
+}
 .search{
 	position: absolute;
+	margin-top: 25%;
 	display: flex;
 	margin-top: 5%;
 	width: 100%;
@@ -187,6 +246,143 @@ export default {
 			.value{
 				font-weight: bold;
 			}
+		}
+	}
+}
+.filter{
+	background-color: white;
+	position: absolute;
+	z-index: 8;
+	width: 100%;
+	height: 400rpx;
+	top: 16%;
+	border: solid 2rpx #2D2F31;
+	display: flex;
+	flex-direction: column;
+	.options{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		width: 100%;
+		height: 70%;
+		.option1{
+			text-align: center;
+			line-height: 100rpx;
+			margin-top: 5%;
+			margin-left: 3%;
+			color: black;
+			width: 45%;
+			height: 36%;
+			background-color: #eeeded;
+			border-radius: 5rpx;
+		}
+		.option2{
+			text-align: center;
+			line-height: 100rpx;
+			margin-top: 5%;
+			margin-left: 3%;
+			color: black;
+			width: 45%;
+			height: 36%;
+			background-color: #eeeded;
+			border-radius: 5rpx;
+		}
+		.option3{
+			text-align: center;
+			line-height: 100rpx;
+			margin-top: 2%;
+			margin-left: 3%;
+			color: black;
+			width: 45%;
+			height: 36%;
+			background-color: #eeeded;
+			border-radius: 5rpx;
+		}
+		.option4{
+			text-align: center;
+			line-height: 100rpx;
+			margin-top: 2%;
+			margin-left: 3%;
+			color: black;
+			width: 45%;
+			height: 36%;
+			background-color: #eeeded;
+			border-radius: 5rpx;
+		}
+		.option1Active{
+			text-align: center;
+			line-height: 100rpx;
+			margin-top: 5%;
+			margin-left: 3%;
+			color: white;
+			width: 45%;
+			height: 36%;
+			background-color: #5484FD;
+			border-radius: 5rpx;
+		}
+		.option2Active{
+			text-align: center;
+			line-height: 100rpx;
+			margin-top: 5%;
+			margin-left: 3%;
+			color: white;
+			width: 45%;
+			height: 36%;
+			background-color: #5484FD;
+			border-radius: 5rpx;
+		}
+		.option3Active{
+			text-align: center;
+			line-height: 100rpx;
+			margin-top: 2%;
+			margin-left: 3%;
+			color: white;
+			width: 45%;
+			height: 36%;
+			background-color: #5484FD;
+			border-radius: 5rpx;
+		}
+		.option4Active{
+			text-align: center;
+			line-height: 100rpx;
+			margin-top: 2%;
+			margin-left: 3%;
+			color: white;
+			width: 45%;
+			height: 36%;
+			background-color: #5484FD;
+			border-radius: 5rpx;
+		}
+	}
+	.buttons{
+		margin-top: 5%;
+		border-top: solid #eeeded 2rpx;
+		width: 100%;
+		height: 30%;
+		display: flex;
+		flex-direction: row;
+		
+		.reset{
+			margin-top: 2%;
+			margin-left: 6%;
+			text-align: center;
+			line-height: 80rpx;
+			width: 40%;
+			height: 70%;	
+			border: 1rpx solid #5484fd;
+			border-radius: 39rpx;
+		}
+		.define{
+			color: white;
+			margin-top: 2%;
+			margin-left: 6%;
+			text-align: center;
+			line-height: 80rpx;
+			width: 40%;
+			height: 70%;
+			border: 1rpx solid #5484fd;
+			border-radius: 39rpx;
+			background: #5484fd;
 		}
 	}
 }
