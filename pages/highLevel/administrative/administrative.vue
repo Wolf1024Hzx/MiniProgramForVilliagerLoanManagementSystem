@@ -1,7 +1,7 @@
 <template>
 	<view>
 		<cu-custom :is-back="true">
-			<template slot="content">村民贷系统</template>
+			<template slot="content">行政区</template>
 		</cu-custom>
 		<view class="main" style="margin-top: 56rpx;">
 			<view class="card" v-for="(item,index) in cardInfos" :key="index">

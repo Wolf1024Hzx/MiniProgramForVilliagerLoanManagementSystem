@@ -78,7 +78,10 @@
 		},
 		methods: {
 			getData() {
-				console.log('data')
+				uni.showToast({
+					icon: 'error',
+					title: '暂无数据'
+				})
 			},
 			getMoreOverdue() {
 				this.overdueMore = true

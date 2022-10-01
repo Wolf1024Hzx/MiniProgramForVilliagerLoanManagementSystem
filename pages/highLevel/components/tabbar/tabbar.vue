@@ -15,21 +15,6 @@
 
 <script>
 	export default {
-		watch: {
-			$route: {
-				immediate: true,
-				handler(to) {
-					if (to.meta.isTabBar) {
-						// this.__path__ = this.$route.path
-						this.showselected = true
-						const index = this.tabBar.list.findIndex(item => to.meta.pagePath === item.pagePath)
-						if (index > -1) {
-							this.selectedIndex = index
-						}
-					}
-				}
-			}
-		},
 		data() {
 			return {
 				selectedIndex: 0,

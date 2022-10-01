@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view v-if="macroInfo">
 		<selects :getData="analysis" :isBack="false"></selects>
 		<view v-if="!isShowCharts">
 			<!-- 未点确定时的总体内容 -->
@@ -9,25 +9,25 @@
 			</view>
 			<view class="overview-1">
 				<view style="flex: 1;">
-					<view class="text-1">300万</view>
+					<view class="text-1">{{macroInfo.loanBalance / 10000}}万</view>
 					<view class="text-2">贷款余额(元)</view>
 				</view>
 				<view style="flex: 1;border-left:solid 1rpx #f5f6ff;border-right:solid 1rpx #f5f6ff;">
-					<view class="text-1">3000</view>
+					<view class="text-1">{{macroInfo.clientCount}}</view>
 					<view class="text-2">户数</view>
 				</view>
 				<view style="flex: 1;">
-					<view class="text-1">20万</view>
+					<view class="text-1">{{macroInfo.rateIncome / 10000}}万</view>
 					<view class="text-2">利息收入</view>
 				</view>
 			</view>
 			<view class="overview-2">
 				<view style="flex: 1;border-right: 1rpx solid #f5f6ff;">
-					<view class="text-1">59万</view>
+					<view class="text-1">{{macroInfo.averLoanAmount / 10000}}万</view>
 					<view class="text-2">户均贷款(元)</view>
 				</view>
 				<view style="flex: 1;">
-					<view class="text-1">3.16</view>
+					<view class="text-1">{{macroInfo.averRate}}</view>
 					<view class="text-2">平均利率(%)</view>
 				</view>
 			</view>
@@ -38,16 +38,16 @@
 				</text>
 				<text style="vertical-align: middle;font-size: 38rpx;font-weight: 700;
 										font-family: Source Han Sans CN, Source Han Sans CN-Bold;">
-					10000
+					{{macroInfo.arpu}}
 				</text>
 			</view>
 			<view class="overview-4">
 				<view style="flex: 1;">
-					<view class="text-1">10万</view>
+					<view class="text-1">{{macroInfo.overdueLoanAmount / 10000}}万</view>
 					<view class="text-2">逾期贷款余额(元)</view>
 				</view>
 				<view style="flex: 1;border-left:solid 1rpx #f5f6ff;border-right:solid 1rpx #f5f6ff;">
-					<view class="text-1">300万</view>
+					<view class="text-1">{{macroInfo.totalInterestOwed / 10000}}万</view>
 					<view class="text-2">欠息和总计</view>
 				</view>
 				<view style="flex: 1;display: flex;align-items: center;justify-content: center;" @click="router(1)">
@@ -76,8 +76,21 @@
 		},
 		data() {
 			return {
-				isShowCharts: false
+				isShowCharts: false,
+				macroInfo: null
 			}
+		},
+		mounted() {
+			this.$request('finance-analysis/overview/startAndEndTime', 'POST', {
+				"subbranch": "全行",  //支行名称 “xx支行”/“全行”
+				"start": "2022-01-01", //开始时间 yyyy-mm-dd
+				"end":"2022-12-31", //结束时间 yyyy-mm-dd
+				"interval": "按年", //时间间隔 可传入：“按年”“按月”“按天”；不填默认是“按月”
+				"manager": "全部" //客户经理
+			}).then((res) => {
+				console.log(res)
+				this.macroInfo = res.macroInfo[0]
+			})
 		},
 		methods: {
 			router(index) {

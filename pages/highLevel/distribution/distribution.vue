@@ -1,13 +1,13 @@
 <template>
 	<view>
-		<customerInformation :status="status" :choses="choses" :title="'客户信息查询'" :isBack="false">
+		<customerInformation :status="status" :choses="choses" :title="'分布情况'" :isBack="false">
 			<template v-slot:customerInformationSearch />
 		</customerInformation>
 		<view class="card">
 			<view class="card-head">
 				<view class="block"></view>
 				<view class="username">各行政区占比</view>
-				<view class="more">查看更多</view>
+				<view class="more" @click="getMore">查看更多</view>
 			</view>
 			<view class="charts-box">
 				<qiun-data-charts type="ring" :opts="optsRing" :chartData="ringDatas" />
@@ -74,7 +74,15 @@
 			}
 		},
 		methods: {
-			
+			getMore() {
+				uni.navigateTo({
+				  url: '/pages/highLevel/administrative/administrative',
+				  animationType: 'pop-in',
+				  fail: (err) => {
+				    console.log(err)
+				  }
+				})
+			}
 		}
 	}
 </script>

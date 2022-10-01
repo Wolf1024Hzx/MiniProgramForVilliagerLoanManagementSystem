@@ -111,7 +111,10 @@
 				this.analysisIndex = index
 			},
 			getData() {
-				
+				uni.showToast({
+					icon: 'error',
+					title: '暂无数据'
+				})
 			}
 		}
 	}

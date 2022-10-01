@@ -1,5 +1,6 @@
 import App from './App'
 import store from './store'
+import request from './utils/request.js'
 
 // #ifndef VUE3
 import Vue from 'vue'
@@ -8,6 +9,7 @@ Vue.config.productionTip = false
 Vue.prototype.$resourceRoute = function(route) {
   return 'http://106.14.200.144:8090/static/' + route
 }
+Vue.prototype.$request = request
 
 App.mpType = 'app'
 const app = new Vue({
