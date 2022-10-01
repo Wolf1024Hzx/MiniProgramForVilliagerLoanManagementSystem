@@ -3,6 +3,9 @@
     <cu-custom is-back="true">
       <template slot="content">业务概况明细</template>
     </cu-custom>
+    <view class="label1" />
+    <view class="label2" />
+    <view class="label3" />
     <view class="my-account_page">
       <!--标题-->
       <view class="card">
@@ -83,7 +86,7 @@ export default {
     goDetail: function(type) {
       if (type === 'business') {
         uni.navigateTo({
-          url: './BusinessDetail/index'
+          url: '/pages/subbranch/ManagementDetails/ManagementDetails'
         })
       } else if (type === 'performance') {
         uni.navigateTo({
@@ -91,7 +94,7 @@ export default {
         })
       } else if (type === 'overDate') {
         uni.navigateTo({
-          url: './OverdateDetail/index'
+          url: '/pages/subbranch/OverduePayment/OverduePayment'
         })
       }
     }
@@ -101,6 +104,30 @@ export default {
 
 <style>
 	@import '@/style/index.css';
+	.label1{
+		position: absolute;
+		width: 10rpx;
+		height: 30rpx;
+		background-color: #5B8FF9;
+		top: 248rpx;
+		left: 30rpx;
+	}
+	.label2{
+		position: absolute;
+		width: 10rpx;
+		height: 30rpx;
+		background-color: #FD6362;
+		top: 620rpx;
+		left: 30rpx;
+	}
+	.label3{
+		position: absolute;
+		width: 10rpx;
+		height: 30rpx;
+		background-color:#FDC862;
+		top: 1053rpx;
+		left: 30rpx;
+	}
 	.my-account_page {
 		padding: 48rpx 30rpx 24rpx;
 		background-color: #F3F5F9;
