@@ -5,7 +5,7 @@
       <template slot="content">业务概况明细</template>
     </cu-custom>
     <!--筛选框-->
-    <view class="search">
+    <view class="search" @click="router(1)">
       <view class="search-info">筛选</view>
       <image class="search-img" :src="getImgUrl('subbranchWorker/filter.png')" />
     </view>
@@ -136,6 +136,24 @@ export default {
     toThousands(num) {
       return num.toString().replace(/\d+/, function(n) {
         return n.replace(/(\d)(?=(?:\d{3})+$)/g, '$1,')
+      })
+    },
+    router(index) {
+      let url = './'
+      switch (index) {
+        case 1:
+          url = '/pages/subbranch/ManagementDetailsPop/ManagementDetailsPop'
+          break
+        case 2:
+          url = './'
+          break
+      }
+      uni.navigateTo({
+        url: url,
+        animationType: 'pop-in',
+        fail: (err) => {
+          console.log(err)
+        }
       })
     }
   }

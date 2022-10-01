@@ -1,112 +1,110 @@
 <template>
-	<view class="my-account_page">
-		<HeaderBg pageTitle="我的管户" isSecondPage="true"></HeaderBg>
-		<view class="card">
-			<view class="card-header row-middle">
-				<view class="card-name">业务概括</view>
-				<view class="get-detail" @click="goDetail('business')">查看明细</view>
-			</view>
-			<view class="card-body col">
-				<view class="detail row-middle">
-					<view class="label">村民户数(户)</view>
-					<view class="value t-blue">30000</view>
-				</view>
-				<view class="detail row-middle">
-					<view class="label">贷款余额(元)</view>
-					<view class="value">300000</view>
-				</view>
-				<view class="detail row-middle">
-					<view class="label">存款余额(元)</view>
-					<view class="value">100000</view>
-				</view>
-			</view>
-	
-		</view>
-		<view class="card">
-			<view class="card-header row-middle">
-				<view class="card-name">贷款业绩</view>
-				<view class="get-detail" @click="goDetail('performance')">查看明细</view>
-			</view>
-			<view class="card-body col">
-				<view class="detail row-middle">
-					<view class="label">本月业绩(元)</view>
-					<view class="value">30000</view>
-				</view>
-				<view class="detail row-middle">
-					<view class="label">较上月(元)</view>
-					<view class="value">300000</view>
-				</view>
-				<view class="detail row-middle">
-					<view class="label">本年业绩(元)</view>
-					<view class="value">100000</view>
-				</view>
-				<view class="detail row-middle">
-					<view class="label">较年初(元)</view>
-					<view class="value" v-updown>100000</view>
-				</view>
-			</view>
-			
-		</view>
-		<view class="card">
-			<view class="card-header row-middle">
-				<view class="card-name">欠息逾期情况</view>
-				<view class="get-detail"  @click="goDetail('overDate')">查看明细</view>
-			</view>
-			<view class="card-body col">
-				<view class="detail row-middle">
-					<view class="label">欠息户数(户)</view>
-					<view class="value t-blue">30000</view>
-				</view>
-				<view class="detail row-middle">
-					<view class="label">欠息金额(元)</view>
-					<view class="value">300000</view>
-				</view>
-				<view class="detail row-middle">
-					<view class="label">逾期户数(户)</view>
-					<view class="value t-blue">100000</view>
-				</view>
-				<view class="detail row-middle">
-					<view class="label">逾期金额(元)</view>
-					<view class="value">100000</view>
-				</view>
-			</view>
-			
-		</view>
-	</view>
+  <view>
+    <cu-custom is-back="true">
+      <template slot="content">业务概况明细</template>
+    </cu-custom>
+    <view class="my-account_page">
+      <!--标题-->
+      <view class="card">
+        <view class="card-header row-middle">
+          <view class="card-name">业务概括</view>
+          <view class="get-detail" @click="goDetail('business')">查看明细</view>
+        </view>
+        <view class="card-body col">
+          <view class="detail row-middle">
+            <view class="label">村民户数(户)</view>
+            <view class="value t-blue">30000</view>
+          </view>
+          <view class="detail row-middle">
+            <view class="label">贷款余额(元)</view>
+            <view class="value">300000</view>
+          </view>
+          <view class="detail row-middle">
+            <view class="label">存款余额(元)</view>
+            <view class="value">100000</view>
+          </view>
+        </view>
+      </view>
+      <view class="card">
+        <view class="card-header row-middle">
+          <view class="card-name">贷款业绩</view>
+          <view class="get-detail" @click="goDetail('performance')">查看明细</view>
+        </view>
+        <view class="card-body col">
+          <view class="detail row-middle">
+            <view class="label">本月业绩(元)</view>
+            <view class="value">30000</view>
+          </view>
+          <view class="detail row-middle">
+            <view class="label">较上月(元)</view>
+            <view class="value">300000</view>
+          </view>
+          <view class="detail row-middle">
+            <view class="label">本年业绩(元)</view>
+            <view class="value">100000</view>
+          </view>
+          <view class="detail row-middle">
+            <view class="label">较年初(元)</view>
+            <view v-updown class="value">100000</view>
+          </view>
+        </view>
+      </view>
+      <view class="card">
+        <view class="card-header row-middle">
+          <view class="card-name">欠息逾期情况</view>
+          <view class="get-detail" @click="goDetail('overDate')">查看明细</view>
+        </view>
+        <view class="card-body col">
+          <view class="detail row-middle">
+            <view class="label">欠息户数(户)</view>
+            <view class="value t-blue">30000</view>
+          </view>
+          <view class="detail row-middle">
+            <view class="label">欠息金额(元)</view>
+            <view class="value">300000</view>
+          </view>
+          <view class="detail row-middle">
+            <view class="label">逾期户数(户)</view>
+            <view class="value t-blue">100000</view>
+          </view>
+          <view class="detail row-middle">
+            <view class="label">逾期金额(元)</view>
+            <view class="value">100000</view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
 </template>
 
 <script setup>
-	import HeaderBg from '@/components/HeaderBg.vue'
-	export default {
-		components: {
-			HeaderBg
-		},
-		methods: {
-			goDetail: function(type){
-				if(type === 'business') {
-					uni.navigateTo({
-						url: './BusinessDetail/index'
-					})
-				}else if(type === 'performance') {
-					uni.navigateTo({
-						url: './PerformanceDetail/index'
-					})
-				}else if (type === 'overDate') {
-					uni.navigateTo({
-						url: './OverdateDetail/index'
-					})
-				}
-			}
-		}
-	}
+export default {
+  methods: {
+    goDetail: function(type) {
+      if (type === 'business') {
+        uni.navigateTo({
+          url: './BusinessDetail/index'
+        })
+      } else if (type === 'performance') {
+        uni.navigateTo({
+          url: './PerformanceDetail/index'
+        })
+      } else if (type === 'overDate') {
+        uni.navigateTo({
+          url: './OverdateDetail/index'
+        })
+      }
+    }
+  }
+}
 </script>
 
 <style>
 	@import '@/style/index.css';
 	.my-account_page {
-		padding: 114.5px 15px 12px;
+		padding: 48rpx 30rpx 24rpx;
 		background-color: #F3F5F9;
-		min-height: 800px;
+		min-height: 800rpx;
 	}
 	.card {
 		background-color: #fff;
