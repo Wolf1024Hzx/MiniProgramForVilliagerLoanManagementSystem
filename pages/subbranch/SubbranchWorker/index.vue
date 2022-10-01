@@ -6,7 +6,7 @@
     </cu-custom>
     <!--卡片信息-->
     <view style="margin-top: 10%;">
-      <view v-for="(item,index) in cardInfos" class="cards">
+      <view v-for="(item,index) in cardInfos" class="cards" @click="router(item.cardNameCn)">
         <view class="card" :style="item.bgc">
           <image class="card-img" :src="getImgUrl(item.cardImg)" />
           <view class="card-info">
@@ -65,6 +65,36 @@ export default {
   methods: {
     getImgUrl(url) {
       return this.$resourceRoute(url)
+    },
+    router(index) {
+      let url = './'
+      switch (index) {
+        case '我的管户':
+          url = '/pages/subbranch/MyAccount/index'
+          break
+        case '客户信息':
+          url = '/pages/midLevel/bussinessInfo/bussinessInfo'
+          break
+        case '影像信息':
+          url = '/pages/midLevel/imageInfo/imageInfo'
+          break
+        case '金融助手':
+          url = '/pages/subbranch/financialAssistant/financialAssistant'
+          break
+        case '潜力客户':
+          url = '/pages/subbranch/PotentialCustomers/PotentialCustomers'
+          break
+        case '华山论剑':
+          url = ''
+          break
+      }
+	  uni.navigateTo({
+	  	url: url,
+        animationType: 'pop-in',
+        fail: (err) => {
+          console.log(err)
+        }
+	  })
     }
   }
 }

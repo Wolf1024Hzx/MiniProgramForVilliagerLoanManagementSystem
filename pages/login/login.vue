@@ -63,6 +63,15 @@ export default {
             }
           })
           break
+        case '3':
+          uni.navigateTo({
+            url: '/pages/subbranch/SubbranchWorker/index',
+            animationType: 'pop-in',
+            fail: (err) => {
+              console.log(err)
+            }
+          })
+          break
         default:
           break
       }
